@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Работа в классе</title>
-  <script type="module" src="script.js"></script>
   <link href="style.css" rel="stylesheet" type="text/css"/>
+  <script type="module" src="Shop.js">
+    import { buyItem } from './Shop.js';
+  </script>
 </head>
 
 <body>
@@ -47,17 +49,16 @@
 <div id="centerArea">
   <div id="rows">
     <div class="row1">
-      <div class="main">Шахты</div>
+      <div class="main">Шахты <span id="cursorsValue">0</span></div>
       <div id="separatorHoriz"></div>
     </div>
-
     <div class="row2">
-      <div class="main">Бурмашина</div>
+      <div class="main">Бурмашина <span id="pickaxesValue">0</span></div>
       <div id="separatorHoriz"></div>
     </div>
 
     <div class="row3">
-      <div class="main">Еще что-то</div>
+      <div class="main">Еще что-то <span id="dynamitesValue">0</span></div>
       <div id="separatorHoriz"></div>
     </div>
   </div>
@@ -73,10 +74,21 @@
 <!-- //////////////////// sectionRight ////////////////////////////////-->
 <div id="sectionRight">
   <div id="store">
-    <div id="storeTitle">Store</div>
-  
+    <div id="storeTitle">
+      <div id="cursorItem" >
+        <img src="Картинки для проекта JS/1.png" alt="">
+        <h2>Buy Cursor (Cost: <span id="cursorCost">10</span>)</h2>
+      </div>
+      <div id="pickaxeItem" >
+        <img src="Картинки для проекта JS/7.png" alt="">
+        <h2>Buy Pickaxe (Cost: <span id="pickaxeCost">50</span>)</h2>
+      </div>
+      <div id="dynamiteItem">
+        <img src="Картинки для проекта JS/10.png" alt="">
+        <h2>Buy Dynamite (Cost: <span id="dynamiteCost">100</span>)</h2>
+      </div>
+    </div>
   </div>
-
 </div>
 
 <!-- //////////////////// sectionRight ////////////////////////////////-->
