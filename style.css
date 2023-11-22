@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 600;
+    font-size:28px;
+	text-shadow:0px 1px 4px #000;
+	color:#fff;
+}
+#separatorVert {
+    width: 16px;
+    height: 100%;
+    background: url("https://orteil.dashnet.org/cookieclicker/img/panelGradientTop.png") no-repeat top left,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelGradientBottom.png") no-repeat bottom left,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelVertical.png?v=2") repeat-y;
+}
+/* ============= sectionLeft ========= */
+#sectionLeft {
+    width: 30%;
+    /* min-width: 300px; */
+    position:relative;
+    background: url("img/backL.jpg");
+}
+#canvas {
+    position: absolute;
+    z-index: -5;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+#infoLeft {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+#factoryName, #oreCount {
+    width: 50%;
+    padding: 24px;
+    margin: 32px;
+    background: rgba(150, 127, 127, 0.4);
+    border-radius: 24px;
+    padding: 4px 0px;
+    color: rgba(255,255,255,0.8);
+
+}
+/* почему не работает :hover???????????*/
+#factoryName:hover {
+    color: #ffffff;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 5px #fff,
+    0 0 10px rgb(223, 243, 133),
+    0 0 15px rgb(223, 243, 133),
+    0 0 20px rgb(223, 243, 133);
+}
+#bigButton {
+    padding: 16px;
+    margin: 32px;
+    border: 4px solid red;
+
+    width: 256px;
+    height: 256px;
+    background-color: rgba(28,28,28,0);
+    background-repeat: no-repeat;
+    border-radius: 128px;
+    border: none;
+}
+#imgButton {
+    width:200px;
+    height:auto;
+}
+
+/* ============= sectionMiddle ========= */
+#sectionMiddle {
+    width: 50%;
+    min-width: 100px;
+    background: url("img/backLeft2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#menu {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background: url("img/midLeft.png") no-repeat top left, url("img/midRight.png") no-repeat top right;
+}
+#comment {
+    margin: 24px;
+    font-size: 0.7em;
+    font-weight: 100;
+}
+.col1, .col3 {
+    position: relative;
+    width: 30%;
+}
+#options, #stats, #info, #legacy {
+    position:absolute;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px rgba(250,180,150,0.75) inset, 0px 0px 0px 1px rgba(75, 71, 71, 0.75), 0px 2px 3px rgba(250,180,150,0.5) inset, 0px 1px 0px 1px rgba(250,180,150,0.25);
+    padding: 6px 12px;
+    font-size: 14px;
+    position: relative;
+    background-color: rgb(159, 130, 207);
+}
+#options:hover, #stats:hover, #info:hover, #legacy:hover {
+    background-color: rgb(130, 183, 207);
+    box-shadow: 0 0 16px rgba(134, 38, 14, 0.9);
+    transition: 0.2s;
+}
+#options {
+    top: -4px;
+    left: 4px;
+}
+#stats {
+    bottom: -4px;
+    left: 4px;
+}
+#info {
+    top: -4px;
+    right: 4px;
+}
+#legacy {
+    bottom: -4px;
+    right: 4px;
+}
+#separatorHoriz {
+    width: 100%;
+    height: 16px;
+    background: url("https://orteil.dashnet.org/cookieclicker/img/panelGradientLeft.png") no-repeat top left,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelGradientRight.png") no-repeat top right,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelHorizontal.png?v=2") repeat-x;
+}
+/* ---------- centerAreaBlock ---------- */
+#centerArea {
+    height: auto;
+    font-size: 0.6em;
+}
+#rows {
+    display: flex;
+    flex-direction: column;
+    /* visibility: hidden; */
+    /* этот блок будет менять видимость. На его 
+    месте будут открываться настройки*/
+}
+.main {
+    width: 100%;
+    height: 100px;
+    /* заменить фон - вставлять шахты и прочее через position */
+    background: rgba(148, 92, 18, 0.164);
+}
+
+/* ============= sectionRight ========= */
+#sectionRight {
+    border: 2px solid pink;
+    width: 20%;
+    height: 100%;
+    background: url("img/backR.jpg");
+}
