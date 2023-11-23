@@ -17,7 +17,6 @@ const btnOptions = document.getElementById("options");
 const btnInfo = document.getElementById("info");
 const btnLegacy = document.getElementById("legacy");
 const btnStats = document.getElementById("stats");
-const closeOptions = document.getElementById("close-btn");
 
 btnOptions.onclick = () => { openClose("options_modal"); };
 
