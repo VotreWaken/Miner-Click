@@ -56,7 +56,6 @@ body {
     color: rgba(255,255,255,0.8);
 
 }
-/* почему не работает :hover???????????*/
 #factoryName:hover {
     color: #ffffff;
   text-shadow:
