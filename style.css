@@ -177,4 +177,41 @@ body {
     height: 100%;
     background: url("img/backR.jpg");
 }
-/* доделать */
+
+
+#cursorItem, #pickaxeItem, #dynamiteItem
+{
+    display: flex;
+    border: solid red 2px;
+    width: 380px;
+    height: 200px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#cursorItem h2, p
+{
+    width: auto;
+    height: auto;
+}
+
+#pickaxeItem img
+{
+    border: solid black 2px;
+    width: 40px;
+    height: 40px;
+}
+
+#cursorItem img 
+{
+    border: solid black 2px;
+    width: 40px;
+    height: 40px;
+}
+
+#dynamiteItem img 
+{
+    border: solid black 2px;
+    width: 40px;
+    height: 40px;
+}
