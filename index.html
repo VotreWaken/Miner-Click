@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Работа в классе</title>
+  <script type="module" src="script.js"></script>
+  <script defer  src="scriptOD.js"></script>
+  <script type="module" src="Shop.js"></script>
+
   <link href="style.css" rel="stylesheet" type="text/css"/>
   <script type="module" src="Shop.js">
     import { buyItem } from './Shop.js';
@@ -18,8 +22,8 @@
   <canvas id="canvas"></canvas>
   <div id="infoLeft">
     <div id="factoryName">My Factory</div>
-    <div id="oreCount">0 <span>diamonds</span></div>
-    <button id="bigButton"><img id="imgButton" src="img/cristal2.png"></button>
+    <div id="oreCount"><span id="mySpan1">0</span> <span id="mySpan">diamonds</span></div>
+    <button onclick="incrementD()" id="bigButton"><img  id="imgButton"  src="img/cristalGreen11.png"></button>
   </div>
 </div>
 
