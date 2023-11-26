@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Работа в классе</title>
+    <script type="module" src="script.js"></script>
+    <script defer src="scriptOD.js"></script>
+    <script type="module" src="Shop.js"></script>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Работа в классе</title>
-  <script type="module" src="script.js"></script>
-  <script defer  src="scriptOD.js"></script>
-  <script type="module" src="Shop.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="Shop.js">
+      import { buyItem } from './Shop.js';
+    </script>
+  </head>
 
-  <link href="style.css" rel="stylesheet" type="text/css"/>
-  <script type="module" src="Shop.js">
-    import { buyItem } from './Shop.js';
-  </script>
-</head>
-
-<body>
-  <div id="overlay" class="overlay"></div>
+  <body>
+    <div id="overlay" class="overlay"></div>
     <div id="options_modal" class="modal">
       <ul>
         <li>option1</li>
@@ -57,88 +56,100 @@
       </ul>
       <span id="close-btn" style="cursor: pointer; float: right">&times;</span>
     </div>
-<!-- //////////////////// sectionLeft ////////////////////////////////-->
-
-<div id="sectionLeft">
-  <img id='img' src="img/cristal1.png" style='display:none; width: 10px; height: 10px;'/>
-  <canvas id="canvas"></canvas>
-  <div id="infoLeft">
-    <div id="factoryName">My Factory</div>
-    <div id="oreCount"><span id="mySpan1">0</span> <span id="mySpan">diamonds</span></div>
-    <button onclick="incrementD()" id="bigButton"><img  id="imgButton"  src="img/cristalGreen11.png"></button>
-  </div>
-</div>
+    <!-- //////////////////// sectionLeft ////////////////////////////////-->
 <div class="wrapper">
-<!-- //////////////////// sectionLeft ////////////////////////////////-->
-
-<div id="separatorVert"></div>
-
-<!-- //////////////////// sectionMiddle ////////////////////////////////-->
-<div id="sectionMiddle">
-  <div id="menu">
-    <div class="col1">
-      <button id="options">Options</button>
-      <button id="stats">Stats</button>
+    <div id="sectionLeft">
+      <img
+        id="img"
+        src="img/cristal1.png"
+        style="display: none; width: 10px; height: 10px"
+      />
+      <canvas id="canvas"></canvas>
+      <div id="infoLeft">
+        <div id="factoryName">My Factory</div>
+        <div id="oreCount">
+          <span id="mySpan1">0</span> <span id="mySpan">diamonds</span>
+        </div>
+        <button onclick="incrementD()" id="bigButton">
+          <img id="imgButton" src="img/cristalGreen11.png" />
+        </button>
+      </div>
     </div>
     
-    <div id="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iure praesentium modi accusamus vel! Odit repellat sunt tempore.</div>
+      <!-- //////////////////// sectionLeft ////////////////////////////////-->
 
-    <div class="col3">
-      <button id="info">Info</button>
-      <button id="legacy">Legacy</button>
-    </div>
-  </div>
+      <div id="separatorVert"></div>
 
-<div id="separatorHoriz"></div>
+      <!-- //////////////////// sectionMiddle ////////////////////////////////-->
+      <div id="sectionMiddle">
+        <div id="menu">
+          <div class="col1">
+            <button id="options">Options</button>
+            <button id="stats">Stats</button>
+          </div>
 
-<!-- Блок с шахтами, машинами и тд, который будет меняться -->
-<div id="centerArea">
-  <div id="rows">
-    <div class="row1">
-      <div class="main">Шахты <span id="cursorsValue">0</span></div>
-      <div id="separatorHoriz"></div>
-    </div>
-    <div class="row2">
-      <div class="main">Бурмашина <span id="pickaxesValue">0</span></div>
-      <div id="separatorHoriz"></div>
-    </div>
+          <div id="comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iure
+            praesentium modi accusamus vel! Odit repellat sunt tempore.
+          </div>
 
-    <div class="row3">
-      <div class="main">Еще что-то <span id="dynamitesValue">0</span></div>
-      <div id="separatorHoriz"></div>
-    </div>
-  </div>
+          <div class="col3">
+            <button id="info">Info</button>
+            <button id="legacy">Legacy</button>
+          </div>
+        </div>
 
-</div>
+        <div id="separatorHoriz"></div>
 
-</div>
+        <!-- Блок с шахтами, машинами и тд, который будет меняться -->
+        <div id="centerArea">
+          <div id="rows">
+            <div class="row1">
+              <div class="main">Шахты <span id="cursorsValue">0</span></div>
+              <div id="separatorHoriz"></div>
+            </div>
+            <div class="row2">
+              <div class="main">
+                Бурмашина <span id="pickaxesValue">0</span>
+              </div>
+              <div id="separatorHoriz"></div>
+            </div>
 
-<!-- //////////////////// sectionMiddle ////////////////////////////////-->
-
-<div id="separatorVert"></div>
-
-<!-- //////////////////// sectionRight ////////////////////////////////-->
-<div id="sectionRight">
-  <div id="store">
-    <div id="storeTitle">
-      <div id="cursorItem" >
-        <img src="Картинки для проекта JS/1.png" alt="">
-        <h2>Buy Cursor (Cost: <span id="cursorCost">10</span>)</h2>
+            <div class="row3">
+              <div class="main">
+                Еще что-то <span id="dynamitesValue">0</span>
+              </div>
+              <div id="separatorHoriz"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="pickaxeItem" >
-        <img src="Картинки для проекта JS/7.png" alt="">
-        <h2>Buy Pickaxe (Cost: <span id="pickaxeCost">50</span>)</h2>
+
+      <!-- //////////////////// sectionMiddle ////////////////////////////////-->
+
+      <div id="separatorVert"></div>
+
+      <!-- //////////////////// sectionRight ////////////////////////////////-->
+      <div id="sectionRight">
+        <div id="store">
+          <div id="storeTitle">
+            <div id="cursorItem">
+              <img src="Картинки для проекта JS/1.png" alt="" />
+              <h2>Buy Cursor (Cost: <span id="cursorCost">10</span>)</h2>
+            </div>
+            <div id="pickaxeItem">
+              <img src="Картинки для проекта JS/7.png" alt="" />
+              <h2>Buy Pickaxe (Cost: <span id="pickaxeCost">50</span>)</h2>
+            </div>
+            <div id="dynamiteItem">
+              <img src="Картинки для проекта JS/10.png" alt="" />
+              <h2>Buy Dynamite (Cost: <span id="dynamiteCost">100</span>)</h2>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="dynamiteItem">
-        <img src="Картинки для проекта JS/10.png" alt="">
-        <h2>Buy Dynamite (Cost: <span id="dynamiteCost">100</span>)</h2>
-      </div>
+
+      <!-- //////////////////// sectionRight ////////////////////////////////-->
     </div>
-  </div>
-</div>
-
-<!-- //////////////////// sectionRight ////////////////////////////////-->
-  </div>
-</body>
-
+  </body>
 </html>
