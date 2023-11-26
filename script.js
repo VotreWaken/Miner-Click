@@ -12,6 +12,7 @@ setInterval(() => {
 }, 200);
 
 ///////////////////////////////////////////////////////////////
+
 // Modal dialogs
 const btnOptions = document.getElementById("options");
 const btnInfo = document.getElementById("info");
@@ -45,3 +46,14 @@ function openModal(idName) {
   document.getElementById(idName).style.display = "flex";
   document.getElementById("overlay").style.display = "block";
 }
+=======
+function increment() {
+    
+    let spanElement = document.getElementById('mySpan1');
+    console.log(spanElement.textContent);
+    let currentScore = parseInt(spanElement.textContent);
+     console.log(currentScore);
+    let newScore = currentScore + 1;
+
+    spanElement.textContent = newScore;
+  }
