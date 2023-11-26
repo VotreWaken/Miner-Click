@@ -81,7 +81,9 @@ export function buyItem(item)
 // Update Score 
 function updateScore() 
 {
-  document.getElementById('oreCount').innerText = score;
+  document.getElementById('mySpan1').innerText = score;
+  //const diamondsCounter = document.getElementById("mySpan1"); // кол-во собранных камней
+  //localStorage.setItem("diamondsCounter", JSON.stringify(diamondsCounter.textContent));
 }
 
 // Update UI of Cursors Count 

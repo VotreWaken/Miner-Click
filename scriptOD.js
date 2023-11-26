@@ -4,15 +4,12 @@
  function incrementD() {
     
     let spanElement = document.getElementById('mySpan1');
-    console.log(spanElement.textContent);
+    //console.log(spanElement.textContent);
     let currentScore = parseInt(spanElement.textContent);
-     console.log(currentScore);
+     //console.log(currentScore);
     let newScore = currentScore + 1;
 
     spanElement.textContent = newScore;
-    
-   
-
   }
 
 
