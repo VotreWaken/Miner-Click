@@ -18,21 +18,26 @@
   document.getElementById('bigButton').addEventListener('click', function() 
   {
   playClickSound();
+ 
   });
 
    function playClickSound() {
     
-   let audio = new Audio("tihiy-odinochnyiy-metallicheskiy-stuk.mp3"); // Укажите путь к звуковому файлу
+   let audio = new Audio("sound/udar-po-metallicheskomu-predmetu.mp3"); // Указывает путь путь к звуковому файлу
    audio.play();
 }
-function addShadow() {
-    let imagButt = document.getElementById('imgButton');
 
-    // Добавляем тень
-    imagButt.style.boxShadow = '0 0 10px 5px rgba(0, 0, 0, 0.5)';
 
-    // Ждем некоторое время (например, 500 миллисекунд) и убираем тень
-    setTimeout(function() {
-      element.style.boxShadow = 'none';
-    }, 100);
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  var myElement = document.getElementById('imgButton');
+
+  myElement.addEventListener('click', function () {
+    // Добавляем класс "clicked" для анимации тени
+    myElement.classList.add('clicked');
+
+    // Убираем класс "clicked" через 0.5 секунды для сброса анимации
+    setTimeout(function () {
+      myElement.classList.remove('clicked');
+    }, 500);
+  });
+});
