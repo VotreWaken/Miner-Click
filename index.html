@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Работа в классе</title>
     <script type="module" src="script.js"></script>
-    <script defer src="scriptOD.js"></script>
+    <script type="module" src="scriptOD.js"></script>
     <script type="module" src="Shop.js"></script>
 
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -70,7 +70,7 @@
         <div id="oreCount">
           <span id="mySpan1">0</span> <span id="mySpan">diamonds</span>
         </div>
-        <button onclick="incrementD()" id="bigButton">
+        <button  id="bigButton">
           <img id="imgButton" src="img/cristalGreen11.png" />
         </button>
       </div>
@@ -151,5 +151,13 @@
 
       <!-- //////////////////// sectionRight ////////////////////////////////-->
     </div>
+    <audio id="backgroundMusic" loop >
+      <source src="sound/back_track1.mp3" type="audio/mp3">
+      
+  </audio>
+  <audio id="backgroundMusic1" loop >
+    <source src="sound/back_track2.mp3" type="audio/mp3">
+    
+</audio>
   </body>
 </html>

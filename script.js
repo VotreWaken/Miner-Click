@@ -56,3 +56,5 @@ function increment() {
 
     spanElement.textContent = newScore;
   }
+
+  

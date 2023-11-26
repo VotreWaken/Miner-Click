@@ -1,5 +1,6 @@
 
 
+
  function incrementD() {
     
     let spanElement = document.getElementById('mySpan1');
@@ -17,7 +18,9 @@
 
   document.getElementById('bigButton').addEventListener('click', function() 
   {
-  playClickSound();
+
+    incrementD();
+    playClickSound();
  
   });
 
@@ -25,6 +28,7 @@
     
    let audio = new Audio("sound/udar-po-metallicheskomu-predmetu.mp3"); // Указывает путь путь к звуковому файлу
    audio.play();
+   audio.volume = 0.5;
 }
 
 
@@ -41,3 +45,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 500);
   });
 });
+
+document.addEventListener('click', function () {
+  let backgroundMusic = document.getElementById('backgroundMusic');
+  let backgroundMusic1 = document.getElementById('backgroundMusic1')
+  // Воспроизведение музыки
+  
+  backgroundMusic.play();
+  backgroundMusic1.play();
+  // Пауза музыки
+  // backgroundMusic.pause();
+
+  // Изменение громкости (значение от 0.0 до 1.0)
+  backgroundMusic.volume = 0.3;
+  backgroundMusic1.volume = 0.3;
+  
+});
+
