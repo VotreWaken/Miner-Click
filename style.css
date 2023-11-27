@@ -285,3 +285,11 @@ body {
     height: 40px;
     transition: transform 0.6s ease;
   }
+  #imgVolume{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+  }
+  #volume{
+    display: flex;
+  }
