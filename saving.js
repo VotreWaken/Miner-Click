@@ -1,3 +1,5 @@
+import { state } from './State.js';
+
 // Сохранение в LocalStorage
 // ссылка на MutationObserver
 // https://developer.mozilla.org/ru/docs/Web/API/MutationObserver
@@ -61,15 +63,19 @@ function loadLocal()
             {
                 case 'emeraldsCounter':
                     emeraldsCounter.textContent = localStorage.getItem(key);
+                    state.score = parseInt(localStorage.getItem(key));
                     break;
                 case 'cursorsValue':
                     cursorsValue.textContent = localStorage.getItem(key);
+                    state.cursors = localStorage.getItem(key);
                     break;
                 case 'pickaxesValue':
                     pickaxesValue.textContent = localStorage.getItem(key);
+                    state.pickaxes = localStorage.getItem(key);
                     break;
                 case 'dynamitesValue':
                     dynamitesValue.textContent = localStorage.getItem(key);
+                    state.dynamites = localStorage.getItem(key);
                     break;
 
             }

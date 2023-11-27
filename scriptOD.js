@@ -1,3 +1,4 @@
+import { state } from './State.js';
 
 
 
@@ -8,7 +9,7 @@
     let currentScore = parseInt(spanElement.textContent);
      //console.log(currentScore);
     let newScore = currentScore + 1;
-
+    state.score = newScore;
     spanElement.textContent = newScore;
   }
 

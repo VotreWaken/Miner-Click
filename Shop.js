@@ -1,76 +1,82 @@
-// Data Variables
-let score = 500;
-let cursors = 0;
-let pickaxes = 0;
-let dynamites = 0;
+// Shop.js
+// Отвечает за логику магазина приложения 
+import { state } from './State.js';
 
-// Products Data
-const items = 
+// Intervals Values 
+let cursorInterval;
+let pickaxeInterval;
+let dynamiteInterval;
+
+// Add Buy Events To HTML Elements 
+document.getElementById('cursorItem').addEventListener('click', function () 
 {
-  'Cursor': { cost: 10, income: 1 },
-  'Pickaxe': { cost: 50, income: 5 },
-  'Dynamite': { cost: 100, income: 10 }
-};
-
-// Add Events To HTML Elements 
-document.getElementById('cursorItem').addEventListener('click', function() {
   buyItem('Cursor');
 });
 
-document.getElementById('pickaxeItem').addEventListener('click', function() {
+document.getElementById('pickaxeItem').addEventListener('click', function () 
+{
   buyItem('Pickaxe');
 });
 
-document.getElementById('dynamiteItem').addEventListener('click', function() {
+document.getElementById('dynamiteItem').addEventListener('click', function () 
+{
   buyItem('Dynamite');
+});
+
+// Add OnLoad Event To HTML Window
+// Starts Intervals that are Responsible for 
+// Updating the Score Value with Current Purchases
+window.addEventListener('load', (event) => 
+{
+  updateShop();
 });
 
 // Buy Item Handler
 export function buyItem(item) 
 {
-  // 
-  const itemInfo = items[item];
+  // Get Item Information 
+  const itemInfo = state.items[item];
 
   // Check Is the Score enough to purchase the goods
-  if (score >= itemInfo.cost) 
+  if (state.score >= itemInfo.cost) 
   {
-
-    // Reducing the Score by the purchase price
-    score -= itemInfo.cost;
-
-     // Increase Price by 1.5 After Buy 
+    // Reducing the State Score by the purchase price
+    state.score -= itemInfo.cost;
+    
+    // Increase Price by 1.5 After Buy 
     itemInfo.cost = Math.ceil(itemInfo.cost * 1.5);
 
     // Update Price 
     updateCost(item, itemInfo.cost);
 
     // Update Score
-    updateScore();
+    updateScore()
 
     // Check Item Type 
     switch (item) 
     {
       // Increase Cursor Count And Update UI for that 
       case 'Cursor':
-        cursors++;
+        state.cursors++;
         updateCursors();
         break;
 
       // Increase Pickaxe Count And Update UI for that 
       case 'Pickaxe':
-        pickaxes++;
+        state.pickaxes++;
         updatePickaxes();
         break;
 
       // Increase Dynamite Count And Update UI for that 
       case 'Dynamite':
-        dynamites++;
+        state.dynamites++;
         updateDynamites();
         break;
     }
+
     // Call Function to Update UI for Shop 
     updateShop();
-  }
+  } 
   // Insufficient Funds 
   else 
   {
@@ -81,25 +87,25 @@ export function buyItem(item)
 // Update Score 
 function updateScore() 
 {
-  document.getElementById('emeraldsCounter').innerText = score;
+  document.getElementById('emeraldsCounter').textContent = state.score;
 }
 
 // Update UI of Cursors Count 
 function updateCursors() 
 {
-    document.getElementById('cursorsValue').innerText = cursors;
+  document.getElementById('cursorsValue').innerText = state.cursors;
 }
 
 // Update UI of Pickaxes Count 
 function updatePickaxes() 
 {
-    document.getElementById('pickaxesValue').innerText = pickaxes;
+  document.getElementById('pickaxesValue').innerText = state.pickaxes;
 }
 
 // Update UI of Dynamites Count 
 function updateDynamites() 
 {
-    document.getElementById('dynamitesValue').innerText = dynamites;
+  document.getElementById('dynamitesValue').innerText = state.dynamites;
 }
 
 // Update UI for Shop 
@@ -110,44 +116,36 @@ function updateShop()
   clearInterval(pickaxeInterval);
   clearInterval(dynamiteInterval);
 
+  console.log(state.cursors)
+  console.log(state.pickaxes)
+  console.log(state.dynamites)
   // Cursor Income Handler 
-  if (cursors > 0) 
+  if (state.cursors > 0) 
   {
     // Set Interval for Cursor Income 
-    var cursorInterval = setInterval(function() 
-    {
-      score += items['Cursor'].income * cursors;
+     cursorInterval = setInterval(function () {
+      state.score += state.items['Cursor'].income * state.cursors;
       updateScore();
     }, 1000);
   }
 
   // Set Interval for Pickaxe Income 
-  if (pickaxes > 0) 
+  if (state.pickaxes > 0) 
   {
-    var pickaxeInterval = setInterval(function() 
-    {
-      score += items['Pickaxe'].income * pickaxes;
+     pickaxeInterval = setInterval(function () {
+      state.score += state.items['Pickaxe'].income * state.pickaxes;
       updateScore();
     }, 1000);
   }
 
   // Set Interval for Dynamites Income 
-  if (dynamites > 0) 
+  if (state.dynamites > 0) 
   {
-    var dynamiteInterval = setInterval(function() 
-    {
-      score += items['Dynamite'].income * dynamites;
+     dynamiteInterval = setInterval(function () {
+      state.score += state.items['Dynamite'].income * state.dynamites;
       updateScore();
     }, 1000);
   }
-}
-
-// Update UI for Cursor Count 
-function updateCursor() 
-{
-    const cursorElement = document.getElementById('cursor');
-    cursorElement.innerHTML = `Cursors: ${cursors}`;
-    cursorElement.onclick = clickHandler;
 }
 
 // Update UI for Item Cost
