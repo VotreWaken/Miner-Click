@@ -31,6 +31,9 @@ function openModal(idName) {
   document.getElementById(idName).style.display = "flex";
   document.getElementById("overlay").style.display = "block";
 }
+
+
+// Для чего тут эта функция?
 function increment() {
     
     let spanElement = document.getElementById('mySpan1');
