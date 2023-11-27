@@ -4,7 +4,7 @@
 
 // localStorage.clear();
 
-const diamondsCounter = document.getElementById("mySpan1");         // кол-во собранных камней
+const emeraldsCounter = document.getElementById("emeraldsCounter"); // кол-во собранных камней
 const cursorsValue = document.getElementById("cursorsValue");       // кол-во курсоров
 const pickaxesValue = document.getElementById("pickaxesValue");     // кол-во кирок
 const dynamitesValue = document.getElementById("dynamitesValue");   // кол-во динамита
@@ -18,9 +18,9 @@ function callback(mutations) {
 
         switch(mutation.target.id)
         {
-            case 'mySpan1':
-                console.log('mySpan1 - change');
-                localStorage.setItem("diamondsCounter", mutation.addedNodes[0].textContent);
+            case 'emeraldsCounter':
+                console.log('emeraldsCounter - change');
+                localStorage.setItem("emeraldsCounter", mutation.addedNodes[0].textContent);
                 break;
             case 'cursorsValue':
                 localStorage.setItem("cursorsValue", mutation.addedNodes[0].textContent);
@@ -42,7 +42,7 @@ const config = {
   };
 
 // Начинаем наблюдение за изменениями элементов
-observer.observe(diamondsCounter, config);
+observer.observe(emeraldsCounter, config);
 observer.observe(cursorsValue, config);
 observer.observe(pickaxesValue, config);
 observer.observe(dynamitesValue, config);
@@ -59,8 +59,8 @@ function loadLocal()
             let key = localStorage.key(i);
             switch(key)
             {
-                case 'diamondsCounter':
-                    diamondsCounter.textContent = localStorage.getItem(key);
+                case 'emeraldsCounter':
+                    emeraldsCounter.textContent = localStorage.getItem(key);
                     break;
                 case 'cursorsValue':
                     cursorsValue.textContent = localStorage.getItem(key);
@@ -87,7 +87,7 @@ function loadLocal()
 // document.getElementById('todownload').onclick = function() {
 
 //     let map = new Map();
-//     map.set(diamondsCounter.id, diamondsCounter.textContent);
+//     map.set(emeraldsCounter.id, emeraldsCounter.textContent);
 //     map.set(cursorsValue.id, cursorsValue.textContent);
 //     map.set(pickaxesValue.id, pickaxesValue.textContent);
 //     map.set(dynamitesValue.id, dynamitesValue.textContent);
