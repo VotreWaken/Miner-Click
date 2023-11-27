@@ -29,33 +29,28 @@
    audio.volume = 0.5;
 }
 
-function createTransformAndRemoveImage() {
+function createTransformAndRemoveImage() {  ///сщздание кристаллов при клике и добавление в див
   // Создание элемента <img>
   let img = document.createElement('img');
    img.id = 'dinamicImg';
-  // Установка атрибута src (путь к изображению)
+  
   img.src = 'img/emerald.png';
 
-  // Добавление класса для применения стилей трансформации
   img.classList.add('transformed');
 
-  // Добавление элемента <img> к body (вы можете выбрать другой контейнер)
   let left_div = document.getElementById('infoLeft');
  left_div.appendChild(img);
 
-  // Выполнение трансформации (в данном случае, добавление класса)
-  // Можете изменить этот блок в соответствии с вашими требованиями для трансформации
-  setTimeout(function () {
-    // Время для отображения изображения перед трансформацией
-
-    // Удаление класса (можете изменить это на другие операции трансформации)
+ 
+  setTimeout(function () {  //трансформаци кристалика
+   
     img.classList.remove('transformed');
 
     // Удаление изображения после завершения трансформации
     setTimeout(function () {
       left_div.removeChild(img);
-    }, 500); // Например, через 1 секунду после трансформации
-  }, 0); // Передача 0 миллисекунд для выполнения в следующем доступном кадре анимации
+    }, 500); 
+  }, 0); 
 }
 
 //#region  фоновая музыка
@@ -70,8 +65,14 @@ document.addEventListener('click', function () {
   // backgroundMusic.pause();
 
   // Изменение громкости (значение от 0.0 до 1.0)
-  backgroundMusic.volume = 0.3;
-  backgroundMusic1.volume = 0.3;
+  //backgroundMusic.volume = 0.3;
+  //backgroundMusic1.volume = 0.3;
   
+});
+
+let volumeControl = document.getElementById('rangeinput');
+volumeControl.addEventListener('input', function() {
+  backgroundMusic.volume = volumeControl.value;
+  backgroundMusic1.volume = volumeControl.value;
 });
 //#endregion
