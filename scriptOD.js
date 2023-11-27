@@ -76,3 +76,14 @@ volumeControl.addEventListener('input', function() {
   backgroundMusic1.volume = volumeControl.value;
 });
 //#endregion
+
+let pulseImage = document.getElementById('imgButton');
+
+    pulseImage.addEventListener('click', function() {
+      
+      pulseImage.classList.add('pulse');
+      
+      setTimeout(function() {
+        pulseImage.classList.remove('pulse');
+      }, 200);
+    });

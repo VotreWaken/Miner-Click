@@ -89,11 +89,9 @@ body {
     width: 350px;
     height:auto;
     cursor: pointer;
-  transition: box-shadow 0.5s ease;
+    transition: transform 0.2s ease-in-out
 }
-#imgButton.clicked {
-    box-shadow: 0px -70px 20px rgba(8, 184, 46, 0.726); /* устанавливаем тень вверх */
-  }
+
 /* ============= sectionMiddle ========= */
 #sectionMiddle {
     width: 50%;
@@ -292,4 +290,7 @@ body {
   }
   #volume{
     display: flex;
+  }
+  #imgButton.pulse{
+    transform: scale(1.2);
   }
