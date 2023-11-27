@@ -5,7 +5,6 @@ import { state } from './State.js';
 // https://developer.mozilla.org/ru/docs/Web/API/MutationObserver
 
 // localStorage.clear();
-
 const emeraldsCounter = document.getElementById("emeraldsCounter"); // кол-во собранных камней
 const cursorsValue = document.getElementById("cursorsValue");       // кол-во курсоров
 const pickaxesValue = document.getElementById("pickaxesValue");     // кол-во кирок
@@ -85,12 +84,13 @@ function loadLocal()
 //#endregion
 
 
+// РАБОЧИЙ КОД - необходимо в настройках добавить Сохранить файл, Загрузить из файла
 /////////////////////////////////////////////////////////////////////////////////////
-// настроить стили для кнопок-ссылок
-//<button id="saveFile"><a id="todownload" href="">Save to file</a></button> // кнопка для сохранения файла
-//сохранить в файл
+// // настроить стили для кнопок-ссылок
+// // <button id="saveFile"><a id="toFile" href="">Save to file</a></button> // кнопка для сохранения файла
+// // сохранить в файл
 
-// document.getElementById('todownload').onclick = function() {
+// document.getElementById('toFile').onclick = function() {
 
 //     let map = new Map();
 //     map.set(emeraldsCounter.id, emeraldsCounter.textContent);
@@ -104,11 +104,56 @@ function loadLocal()
 //     let myMap = new Map(JSON.parse(mySerialMap));
 //     console.log(myMap);
 
-//     let text = mySerialMap; //"Данные, которые мы сохрянем в файл data.txt";
+//     let text = mySerialMap; //"Данные, которые мы сохрянем в файл myGame.txt";
 //     let myData = 'data:application/txt;charset=utf-8,' + encodeURIComponent(text);
 //     this.href = myData;
 //     this.download = 'myGame.txt';
+// };
+
+// // для загрузки из файла
+// //<label id="load" for="fromFile">Load from file</label>
+// //<input id="fromFile" type="file" style="visibility:hidden;" accept=".txt"></input>
+
+// const fromFile = document.getElementById('fromFile');
+// fromFile.addEventListener("change", (event)=> {
+
+//     let file = event.target.files[0];   // читаем 1 файл
+//     let reader = new FileReader();
+//     reader.readAsText(file);            // преобразование в строку
+
+//     reader.onload = function() {
+//     let myMap = new Map(JSON.parse(reader.result));  // парсим строку в map
+//     gameRecover(myMap); // восстанавливаем игру, заполняя необходимые данные
+//   };
+
+//   reader.onerror = function() {
+//     //alert(reader.error);
+//     alert("Error reading file!");
+//   };
+// });
+
+// // восстановление игры
+// function gameRecover(map) {
+
+//     map.forEach((value, key) => {
+//         switch(key)
+//         {
+//             case 'emeraldsCounter':
+//                 emeraldsCounter.textContent = value;
+//                 state.score = parseInt(value);
+//                 break;
+//             case 'cursorsValue':
+//                 cursorsValue.textContent = value;
+//                 state.cursors = value;
+//                 break;
+//             case 'pickaxesValue':
+//                 pickaxesValue.textContent = value;
+//                 state.pickaxes = value;
+//                 break;
+//             case 'dynamitesValue':
+//                 dynamitesValue.textContent =value;
+//                 state.dynamites = value;
+//                 break;
+//         }
+//     });
 // }
-
-
-
