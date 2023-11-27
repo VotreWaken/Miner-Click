@@ -81,7 +81,7 @@ export function buyItem(item)
 // Update Score 
 function updateScore() 
 {
-  document.getElementById('oreCount').innerText = score;
+  document.getElementById('mySpan1').innerText = score;
 }
 
 // Update UI of Cursors Count 
