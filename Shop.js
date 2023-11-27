@@ -81,7 +81,7 @@ export function buyItem(item)
 // Update Score 
 function updateScore() 
 {
-  document.getElementById('mySpan1').innerText = score;
+  document.getElementById('emeraldsCounter').innerText = score;
 }
 
 // Update UI of Cursors Count 
