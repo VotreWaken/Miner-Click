@@ -3,7 +3,7 @@
 
  function incrementD() {
     
-    let spanElement = document.getElementById('mySpan1');
+    let spanElement = document.getElementById('emeraldsCounter');
     console.log(spanElement.textContent);
     let currentScore = parseInt(spanElement.textContent);
      console.log(currentScore);
@@ -11,8 +11,6 @@
 
     spanElement.textContent = newScore;
     
-   
-
   }
 
 
@@ -21,7 +19,7 @@
 
     incrementD();
     playClickSound();
- 
+    createTransformAndRemoveImage()
   });
 
    function playClickSound() {
@@ -31,21 +29,36 @@
    audio.volume = 0.5;
 }
 
+function createTransformAndRemoveImage() {
+  // Создание элемента <img>
+  let img = document.createElement('img');
+   img.id = 'dinamicImg';
+  // Установка атрибута src (путь к изображению)
+  img.src = 'img/emerald.png';
 
-document.addEventListener('DOMContentLoaded', function () {
-  var myElement = document.getElementById('imgButton');
+  // Добавление класса для применения стилей трансформации
+  img.classList.add('transformed');
 
-  myElement.addEventListener('click', function () {
-    // Добавляем класс "clicked" для анимации тени
-    myElement.classList.add('clicked');
+  // Добавление элемента <img> к body (вы можете выбрать другой контейнер)
+  let left_div = document.getElementById('infoLeft');
+ left_div.appendChild(img);
 
-    // Убираем класс "clicked" через 0.5 секунды для сброса анимации
+  // Выполнение трансформации (в данном случае, добавление класса)
+  // Можете изменить этот блок в соответствии с вашими требованиями для трансформации
+  setTimeout(function () {
+    // Время для отображения изображения перед трансформацией
+
+    // Удаление класса (можете изменить это на другие операции трансформации)
+    img.classList.remove('transformed');
+
+    // Удаление изображения после завершения трансформации
     setTimeout(function () {
-      myElement.classList.remove('clicked');
-    }, 500);
-  });
-});
+      left_div.removeChild(img);
+    }, 500); // Например, через 1 секунду после трансформации
+  }, 0); // Передача 0 миллисекунд для выполнения в следующем доступном кадре анимации
+}
 
+//#region  фоновая музыка
 document.addEventListener('click', function () {
   let backgroundMusic = document.getElementById('backgroundMusic');
   let backgroundMusic1 = document.getElementById('backgroundMusic1')
@@ -61,4 +74,4 @@ document.addEventListener('click', function () {
   backgroundMusic1.volume = 0.3;
   
 });
-
+//#endregion
