@@ -2,7 +2,7 @@
 // ссылка на MutationObserver
 // https://developer.mozilla.org/ru/docs/Web/API/MutationObserver
 
-//localStorage.clear();
+// localStorage.clear();
 
 const diamondsCounter = document.getElementById("mySpan1");         // кол-во собранных камней
 const cursorsValue = document.getElementById("cursorsValue");       // кол-во курсоров
@@ -77,3 +77,32 @@ function loadLocal()
     }
 }
 //#endregion
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+// настроить стили для кнопок-ссылок
+//<button id="saveFile"><a id="todownload" href="">Save to file</a></button> // кнопка для сохранения файла
+//сохранить в файл
+
+// document.getElementById('todownload').onclick = function() {
+
+//     let map = new Map();
+//     map.set(diamondsCounter.id, diamondsCounter.textContent);
+//     map.set(cursorsValue.id, cursorsValue.textContent);
+//     map.set(pickaxesValue.id, pickaxesValue.textContent);
+//     map.set(dynamitesValue.id, dynamitesValue.textContent);
+    
+//     let mySerialMap = JSON.stringify(Array.from(map.entries()))
+//     console.log(mySerialMap);
+    
+//     let myMap = new Map(JSON.parse(mySerialMap));
+//     console.log(myMap);
+
+//     let text = mySerialMap; //"Данные, которые мы сохрянем в файл data.txt";
+//     let myData = 'data:application/txt;charset=utf-8,' + encodeURIComponent(text);
+//     this.href = myData;
+//     this.download = 'myGame.txt';
+// }
+
+
+
