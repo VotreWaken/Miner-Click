@@ -120,7 +120,7 @@ body {
     position: relative;
     width: 30%;
 }
-#options, #stats, #info, #legacy {
+#options, #stats, #info, #legacy{
     position:absolute;
     border-radius: 5px;
     box-shadow: 0px 1px 0px rgba(250,180,150,0.75) inset, 0px 0px 0px 1px rgba(75, 71, 71, 0.75), 0px 2px 3px rgba(250,180,150,0.5) inset, 0px 1px 0px 1px rgba(250,180,150,0.25);
@@ -129,7 +129,7 @@ body {
     position: relative;
     background-color: rgb(159, 130, 207);
 }
-#options:hover, #stats:hover, #info:hover, #legacy:hover {
+#options:hover, #stats:hover, #info:hover, #legacy:hover{
     background-color: rgb(130, 183, 207);
     box-shadow: 0 0 16px rgba(134, 38, 14, 0.9);
     transition: 0.2s;
@@ -234,7 +234,7 @@ body {
 }
 
 
-
+/* //////////////////////////////////////////// */
 #cursorItem, #pickaxeItem, #dynamiteItem
 {
     display: flex;
@@ -283,6 +283,7 @@ body {
     height: 40px;
     transition: transform 0.6s ease;
   }
+
   #imgVolume{
     width: 30px;
     height: 30px;
@@ -294,3 +295,61 @@ body {
   #imgButton.pulse{
     transform: scale(1.2);
   }
+
+
+  /* ============= preloader загрузочный экран ========= */
+  #preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
+  #preloader img {
+    border: 0;
+    margin: 0;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+    z-index: 1000;
+  }
+  
+  #preloader :first-child {
+    background: transparent;
+    animation-delay: -1.5s;
+  }
+  #preloader :nth-child(2) {
+    background: transparent;
+    animation-delay: -1s;
+  }
+  #preloader :nth-child(3) {
+    background: transparent;
+    animation-delay: -0.5s;
+  }
+  #preloader :nth-child(4) {
+    background: transparent;
+  }
+  
+  @keyframes spin {
+    0%,
+    100% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(160%);
+    }
+    50% {
+      transform: translate(160%, 160%);
+    }
+    75% {
+      transform: translate(0, 160%);
+    }
+  }
+

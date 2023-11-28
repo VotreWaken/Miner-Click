@@ -3,19 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Работа в классе</title>
+    <title>Miner Clicker</title>
     <script type="module" src="script.js"></script>
     <script type="module" src="scriptOD.js"></script>
-    <script type="module" src="Shop.js"></script>
-
+    <script type="module" src="saving.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
     <script type="module" src="Shop.js">
       import { buyItem } from './Shop.js';
     </script>
-    <title>Pulse Effect</title>
+    
+
+    <script defer type="module" src="Shop.js"></script>
+
   </head>
 
   <body>
+
+    <!-- //////////////////// preloader ////////////////////////////////-->
+    <div id="preloader">
+      <img src="img/blue.png">
+      <img src="img/orange.png">
+      <img src="img/green.png">
+      <img src="img/purple.png">
+    </div>
+
+    <!-- //////////////////////////////////////////////////////////////////////// -->
     <div id="overlay" class="overlay"></div>
     <div id="options_modal" class="modal">
       <ul>
@@ -89,7 +102,7 @@
       <div id="sectionMiddle">
         <div id="menu">
           <div class="col1">
-            <button id="options">Options</button>
+            <button id="options">Options</button> 
             <button id="stats">Stats</button>
           </div>
 
