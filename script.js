@@ -1,15 +1,12 @@
-const ctx = canvas.getContext("2d"); // получаем контекст канваса, чтоб говорить полотну где и что рисовать
-let img = document.getElementById("img");
+// preloader загрузочный экран
+// load – браузер загрузил HTML и внешние ресурсы (картинки, стили и т.д.).
+window.addEventListener("load", ()=> {
+  setTimeout(function() {                                           // с помощью таймера делаем плавный переход 
 
-// Двигающийся фон
-let x = 0;
-let y = 0;
-setInterval(() => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  y += 1;
-  ctx.drawImage(img, x, y, 10, 5);
-  if (y === 120) y = 0;
-}, 200);
+    document.getElementById("preloader").style.display = "none";   // скрываем загрузочный экран
+
+  }, 1000);
+});
 
 ///////////////////////////////////////////////////////////////
 
