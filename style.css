@@ -89,11 +89,9 @@ body {
     width: 350px;
     height:auto;
     cursor: pointer;
-  transition: box-shadow 0.5s ease;
+    transition: transform 0.2s ease-in-out
 }
-#imgButton.clicked {
-    box-shadow: 0px -70px 20px rgba(8, 184, 46, 0.726); /* устанавливаем тень вверх */
-  }
+
 /* ============= sectionMiddle ========= */
 #sectionMiddle {
     width: 50%;
@@ -286,6 +284,19 @@ body {
     transition: transform 0.6s ease;
   }
 
+  #imgVolume{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+  }
+  #volume{
+    display: flex;
+  }
+  #imgButton.pulse{
+    transform: scale(1.2);
+  }
+
+
   /* ============= preloader загрузочный экран ========= */
   #preloader {
     position: absolute;
@@ -341,3 +352,4 @@ body {
       transform: translate(0, 160%);
     }
   }
+

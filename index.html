@@ -8,7 +8,14 @@
     <script type="module" src="scriptOD.js"></script>
     <script type="module" src="saving.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script type="module" src="Shop.js">
+      import { buyItem } from './Shop.js';
+    </script>
+    
+
     <script defer type="module" src="Shop.js"></script>
+
   </head>
 
   <body>
@@ -25,7 +32,11 @@
     <div id="overlay" class="overlay"></div>
     <div id="options_modal" class="modal">
       <ul>
-        <li>option1</li>
+        <li><div id="volume"> 
+          <img id="imgVolume" src="img\volume.png"><input type="range" id="rangeinput" min="0" max="1" step="0.01" value="1">
+        </div>
+          
+        </li>
         <li>option2</li>
         <li>option3</li>
         <li>option4</li>
