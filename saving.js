@@ -76,7 +76,6 @@ function loadLocal()
                     dynamitesValue.textContent = localStorage.getItem(key);
                     state.dynamites = localStorage.getItem(key);
                     break;
-
             }
         }
     }
@@ -86,74 +85,74 @@ function loadLocal()
 
 // РАБОЧИЙ КОД - необходимо в настройках добавить Сохранить файл, Загрузить из файла
 /////////////////////////////////////////////////////////////////////////////////////
-// // настроить стили для кнопок-ссылок
-// // <button id="saveFile"><a id="toFile" href="">Save to file</a></button> // кнопка для сохранения файла
-// // сохранить в файл
+// настроить стили для кнопок-ссылок
+// <button id="saveFile"><a id="toFile" href="">Save to file</a></button> // кнопка для сохранения файла
+// сохранить в файл
 
-// document.getElementById('toFile').onclick = function() {
+document.getElementById('toFile').onclick = function() {
 
-//     let map = new Map();
-//     map.set(emeraldsCounter.id, emeraldsCounter.textContent);
-//     map.set(cursorsValue.id, cursorsValue.textContent);
-//     map.set(pickaxesValue.id, pickaxesValue.textContent);
-//     map.set(dynamitesValue.id, dynamitesValue.textContent);
+    let map = new Map();
+    map.set(emeraldsCounter.id, emeraldsCounter.textContent);
+    map.set(cursorsValue.id, cursorsValue.textContent);
+    map.set(pickaxesValue.id, pickaxesValue.textContent);
+    map.set(dynamitesValue.id, dynamitesValue.textContent);
     
-//     let mySerialMap = JSON.stringify(Array.from(map.entries()))
-//     console.log(mySerialMap);
+    let mySerialMap = JSON.stringify(Array.from(map.entries()))
+    console.log(mySerialMap);
     
-//     let myMap = new Map(JSON.parse(mySerialMap));
-//     console.log(myMap);
+    let myMap = new Map(JSON.parse(mySerialMap));
+    console.log(myMap);
 
-//     let text = mySerialMap; //"Данные, которые мы сохрянем в файл myGame.txt";
-//     let myData = 'data:application/txt;charset=utf-8,' + encodeURIComponent(text);
-//     this.href = myData;
-//     this.download = 'myGame.txt';
-// };
+    let text = mySerialMap; //"Данные, которые мы сохрянем в файл myGame.txt";
+    let myData = 'data:application/txt;charset=utf-8,' + encodeURIComponent(text);
+    this.href = myData;
+    this.download = 'myGame.txt';
+};
 
-// // для загрузки из файла
-// //<label id="load" for="fromFile">Load from file</label>
-// //<input id="fromFile" type="file" style="visibility:hidden;" accept=".txt"></input>
+// для загрузки из файла
+//<label id="load" for="fromFile">Load from file</label>
+//<input id="fromFile" type="file" style="visibility:hidden;" accept=".txt"></input>
 
-// const fromFile = document.getElementById('fromFile');
-// fromFile.addEventListener("change", (event)=> {
+const fromFile = document.getElementById('fromFile');
+fromFile.addEventListener("change", (event)=> {
 
-//     let file = event.target.files[0];   // читаем 1 файл
-//     let reader = new FileReader();
-//     reader.readAsText(file);            // преобразование в строку
+    let file = event.target.files[0];   // читаем 1 файл
+    let reader = new FileReader();
+    reader.readAsText(file);            // преобразование в строку
 
-//     reader.onload = function() {
-//     let myMap = new Map(JSON.parse(reader.result));  // парсим строку в map
-//     gameRecover(myMap); // восстанавливаем игру, заполняя необходимые данные
-//   };
+    reader.onload = function() {
+    let myMap = new Map(JSON.parse(reader.result));  // парсим строку в map
+    gameRecover(myMap); // восстанавливаем игру, заполняя необходимые данные
+  };
 
-//   reader.onerror = function() {
-//     //alert(reader.error);
-//     alert("Error reading file!");
-//   };
-// });
+  reader.onerror = function() {
+    //alert(reader.error);
+    alert("Error reading file!");
+  };
+});
 
-// // восстановление игры
-// function gameRecover(map) {
+// восстановление игры
+function gameRecover(map) {
 
-//     map.forEach((value, key) => {
-//         switch(key)
-//         {
-//             case 'emeraldsCounter':
-//                 emeraldsCounter.textContent = value;
-//                 state.score = parseInt(value);
-//                 break;
-//             case 'cursorsValue':
-//                 cursorsValue.textContent = value;
-//                 state.cursors = value;
-//                 break;
-//             case 'pickaxesValue':
-//                 pickaxesValue.textContent = value;
-//                 state.pickaxes = value;
-//                 break;
-//             case 'dynamitesValue':
-//                 dynamitesValue.textContent =value;
-//                 state.dynamites = value;
-//                 break;
-//         }
-//     });
-// }
+    map.forEach((value, key) => {
+        switch(key)
+        {
+            case 'emeraldsCounter':
+                emeraldsCounter.textContent = value;
+                state.score = parseInt(value);
+                break;
+            case 'cursorsValue':
+                cursorsValue.textContent = value;
+                state.cursors = value;
+                break;
+            case 'pickaxesValue':
+                pickaxesValue.textContent = value;
+                state.pickaxes = value;
+                break;
+            case 'dynamitesValue':
+                dynamitesValue.textContent =value;
+                state.dynamites = value;
+                break;
+        }
+    });
+}
