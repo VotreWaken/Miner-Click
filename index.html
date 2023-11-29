@@ -8,14 +8,8 @@
     <script type="module" src="scriptOD.js"></script>
     <script type="module" src="saving.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <script type="module" src="Shop.js">
-      import { buyItem } from './Shop.js';
-    </script>
-    
-
+    <script type="module" src="./Achievements.js" defer></script>
     <script defer type="module" src="Shop.js"></script>
-
   </head>
 
   <body>
@@ -93,6 +87,9 @@
         <div id="oreCount">
           <span id="emeraldsCounter">0</span> <span id="mySpan">emeralds</span>
         </div>
+        <div id="EmeraldsOnSecond">
+          <span id="EmeraldsInSecond">0</span> <span>In Second</span>
+        </div>
         <button  id="bigButton">
           <img id="imgButton" draggable="false" src="img/cristalGreen11.png" />
         </button>
@@ -128,7 +125,9 @@
         <div id="centerArea">
           <div id="rows">
             <div class="row1">
-              <div class="main">Шахты <span id="cursorsValue">0</span></div>
+              <div class="main">
+                Шахты <span id="cursorsValue">0</span></div>
+                <div id="cursorsImagesContainer"></div>
               <div id="separatorHoriz"></div>
             </div>
             <div class="row2">

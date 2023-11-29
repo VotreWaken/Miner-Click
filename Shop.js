@@ -1,6 +1,8 @@
 // Shop.js
 // Отвечает за логику магазина приложения 
 import { state } from './State.js';
+import { checkAchievements } from './Achievements.js';
+import {collectOfflineResources} from './saving.js';
 
 // Intervals Values 
 let cursorInterval;
@@ -28,6 +30,8 @@ document.getElementById('dynamiteItem').addEventListener('click', function ()
 // Updating the Score Value with Current Purchases
 window.addEventListener('load', (event) => 
 {
+  loadLocalPrice();
+  //collectOfflineResources();
   updateShop();
 });
 
@@ -59,20 +63,24 @@ export function buyItem(item)
       case 'Cursor':
         state.cursors++;
         updateCursors();
+        checkAchievements();
         break;
 
       // Increase Pickaxe Count And Update UI for that 
       case 'Pickaxe':
         state.pickaxes++;
         updatePickaxes();
+        checkAchievements();
         break;
 
       // Increase Dynamite Count And Update UI for that 
       case 'Dynamite':
         state.dynamites++;
         updateDynamites();
+        checkAchievements();
         break;
     }
+    
 
     // Call Function to Update UI for Shop 
     updateShop();
@@ -94,6 +102,32 @@ function updateScore()
 function updateCursors() 
 {
   document.getElementById('cursorsValue').innerText = state.cursors;
+
+
+  // Call the function to update cursor images
+  UpdateCursorsImages();
+}
+
+// Create Images With Represent Value
+function UpdateCursorsImages()
+{
+
+  // Получаем Контейнер Для Cursor Images
+  const cursorsImagesContainer = document.getElementById('cursorsImagesContainer');
+
+   // Обнуляем прошлые Картинки
+  cursorsImagesContainer.innerHTML = '';
+
+   // Максимальное количество курсоров для отображения
+  const maxCursorsToShow = 20;
+
+  // Инициализируем новые элементы добавляя к ним Image
+  for (let i = 0; i < state.cursors && i < maxCursorsToShow; i++) 
+  {
+    const cursorImage = document.createElement('img');
+    cursorImage.src = 'path/to/cursor_image.png';
+    cursorsImagesContainer.appendChild(cursorImage);
+  }
 }
 
 // Update UI of Pickaxes Count 
@@ -115,6 +149,14 @@ function updateShop()
   clearInterval(cursorInterval);
   clearInterval(pickaxeInterval);
   clearInterval(dynamiteInterval);
+
+  // Calculate total income per second
+  let totalIncome = state.items['Cursor'].income * state.cursors +
+                    state.items['Pickaxe'].income * state.pickaxes +
+                    state.items['Dynamite'].income * state.dynamites;
+
+  // Update UI for total income per second
+  document.getElementById('EmeraldsInSecond').textContent = totalIncome;
 
   console.log(state.cursors)
   console.log(state.pickaxes)
@@ -152,4 +194,13 @@ function updateShop()
 function updateCost(item, cost) 
 {
   document.getElementById(item.toLowerCase() + 'Cost').innerText = cost;
+}
+
+// Загружаем и Обновляем Новые Цены На Предметы
+function loadLocalPrice() 
+{
+  // обновляем цены при загрузке
+  updateCost('Cursor', state.items.Cursor.cost);
+  updateCost('Pickaxe', state.items.Pickaxe.cost);
+  updateCost('Dynamite', state.items.Dynamite.cost);
 }

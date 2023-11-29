@@ -1,3 +1,4 @@
+// State.js
 export const state = 
 {
     score: 0,
@@ -8,5 +9,26 @@ export const state =
       'Cursor': { cost: 10, income: 1 },
       'Pickaxe': { cost: 50, income: 5 },
       'Dynamite': { cost: 100, income: 10 }
+    },
+    // Достижения 
+    achievements: 
+    {
+      cursorAchievement1: 
+      {
+        condition: () => state.cursors >= 10,
+        title: 'Bought 10 Cursors',
+        image: 'path/to/cursor_achievement_10.png',
+        description: 'Congratulations! You have bought 10 Cursors.',
+        achieved: false,
+      },
+      cursorAchievement2: 
+      {
+        condition: () => state.cursors >= 100,
+        title: 'Bought 100 Cursors',
+        image: 'path/to/cursor_achievement_100.png',
+        description: 'Amazing! You have bought 100 Cursors.',
+        achieved: false,
+      },
+      // Другие Достижения Добавлять Тут
     }
 };

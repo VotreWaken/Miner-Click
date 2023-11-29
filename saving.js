@@ -25,12 +25,15 @@ function callback(mutations) {
                 break;
             case 'cursorsValue':
                 localStorage.setItem("cursorsValue", mutation.addedNodes[0].textContent);
+                localStorage.setItem("cursorCost", state.items.Cursor.cost);
                 break;
             case 'pickaxesValue':
                 localStorage.setItem("pickaxesValue", mutation.addedNodes[0].textContent);
+                localStorage.setItem("pickaxeCost", state.items.Pickaxe.cost);
                 break;
             case 'dynamitesValue':
                 localStorage.setItem("dynamitesValue", mutation.addedNodes[0].textContent);
+                localStorage.setItem("dynamiteCost", state.items.Dynamite.cost);
                 break;
         }
     });    
@@ -55,7 +58,8 @@ function loadLocal()
 {
     if (localStorage.length > 0)
     {
-        for(let i = 0; i < localStorage.length; i++) // переберём ключи LocalStorage
+         // переберём ключи LocalStorage
+        for(let i = 0; i < localStorage.length; i++)
         {
             let key = localStorage.key(i);
             switch(key)
@@ -64,23 +68,193 @@ function loadLocal()
                     emeraldsCounter.textContent = localStorage.getItem(key);
                     state.score = parseInt(localStorage.getItem(key));
                     break;
+
+                // Общая обработка для cursorsValue, pickaxesValue и dynamitesValue
                 case 'cursorsValue':
-                    cursorsValue.textContent = localStorage.getItem(key);
-                    state.cursors = localStorage.getItem(key);
-                    break;
                 case 'pickaxesValue':
-                    pickaxesValue.textContent = localStorage.getItem(key);
-                    state.pickaxes = localStorage.getItem(key);
-                    break;
                 case 'dynamitesValue':
-                    dynamitesValue.textContent = localStorage.getItem(key);
-                    state.dynamites = localStorage.getItem(key);
+                    updateItemValue(key, localStorage.getItem(key));
                     break;
+
+                // Обработка Получения Цены на Предметы из LocalStorage
+                case 'cursorCost':
+                    state.items.Cursor.cost = parseInt(localStorage.getItem(key));
+                    break;
+                case 'pickaxeCost':
+                    state.items.Pickaxe.cost = parseInt(localStorage.getItem(key));
+                    break;
+                case 'dynamiteCost':
+                    state.items.Dynamite.cost = parseInt(localStorage.getItem(key));
+                    break;
+                
+                // Обработка Получения Уже Полученных Достижений
+                default:
+                    if (key in state.achievements) 
+                    {
+                        // Присваиваем Значение Достижения из Local Storage
+                        state.achievements[key].achieved = localStorage.getItem(key) === 'true';
+                    }
+
+            break;
             }
         }
+
+        // Оффлайн Сбор Ресурсов
+        collectOfflineResources();
+
+        // Сохранение Последней Даты Входа
+        saveLastLoginDate();
+
+        // Сброс Local Storage
+        //ResetLocalStorage()
+    }
+}
+
+// Получение Значений Количества Предметов
+function updateItemValue(itemType, value) 
+{
+    switch (itemType) {
+        case 'cursorsValue':
+            cursorsValue.textContent = value;
+            state.cursors = parseInt(value);
+            break;
+        case 'pickaxesValue':
+            pickaxesValue.textContent = value;
+            state.pickaxes = parseInt(value);
+            break;
+        case 'dynamitesValue':
+            dynamitesValue.textContent = value;
+            state.dynamites = parseInt(value);
+            break;
     }
 }
 //#endregion
+
+//#region Оффлайн Сбор Ресурсов 
+
+// Логика сохранения Даты 
+function saveLastLoginDate() 
+{
+    // Получение Текущей Даты 
+    const currentDate = new Date();
+
+    // Сохранение Текущей Даты в LocalStorage переменную lastLoginDate
+    localStorage.setItem('lastLoginDate', currentDate.toISOString());
+
+    // Вывод в console.log
+    console.log("SAVE DATE: " + currentDate);
+}
+
+// Вычисление Количества Оффлайна В Секундах 
+function calculateOfflineTime() 
+{
+    // Получаем Дату из Local Storage
+    const lastLoginDate = localStorage.getItem('lastLoginDate');
+
+    // Если Дата была сохранена в Local Storage
+    if (lastLoginDate) 
+    {
+        // Получение Текущей Даты 
+        const currentDate = new Date();
+
+        // Получение Последней Даты Входа
+        const lastLogin = new Date(lastLoginDate);
+
+        // Вывод Разницы в console.log()
+        console.log(`CURRENT: ${currentDate}, LASTLOGIN: ${lastLogin}`)
+
+        // Вычисление Разницы Дат В Секундах
+        const offlineTimeInSeconds = Math.floor((currentDate - lastLogin) / 1000);
+
+        // Вывод Разницы Дат В Секундах в console.log()
+        console.log("Time In Seconds: " + offlineTimeInSeconds)
+
+        // Возвращение Результата Оффлайна в Секундах 
+        return offlineTimeInSeconds;
+    }
+    // Возвращаем 0 Если Нет в Local Storage 
+    else 
+    {
+        return 0;
+    }
+}
+
+// Оффлайн Сбор Ресурсов
+export function collectOfflineResources() 
+{
+
+    // Получаем Количество Оффлайна В Секундах 
+    const offlineTime = calculateOfflineTime();
+
+    // Получаем Количество Добываемых Ресурсов в секунду
+    const cursorIncome = state.items['Cursor'].income * state.cursors;
+    const pickaxeIncome = state.items['Pickaxe'].income * state.pickaxes;
+    const dynamiteIncome = state.items['Dynamite'].income * state.dynamites;
+
+    // Собранные Ресурсы в Оффлайне = Количество Добываемых Ресурсов в секунду * Разницу Между Датами ( В секундах )
+    const emeraldGain = (cursorIncome + pickaxeIncome + dynamiteIncome) * offlineTime;
+
+    // Добавить ресурсы к текущему балансу
+    state.score += emeraldGain;
+
+    // Вывод Добавленной Суммы к Текущему Счету
+    console.log( "After Offiline + " + emeraldGain)
+}
+
+//#endregion
+
+//#region ResetLocalStorage
+
+// Reset Local Storage ( Полностью Очищает Прогресс из LocalStorage и обнуляет текущее состояние игры )
+function ResetLocalStorage() 
+{
+    ResetStateVariables();
+    ResetAchievements();
+    ResetStatePrices();
+}
+
+// Reset Всех Достижений 
+function ResetAchievements() 
+{
+    for (const achievementKey in state.achievements) 
+    {
+      // Reset Полученных Достижений 
+      state.achievements[achievementKey].achieved = false;
+
+      // Reset Local Storage от Достижений 
+      localStorage.setItem(achievementKey, false);
+    }
+}
+
+// Reset Всех Переменных Состояния 
+function ResetStateVariables()
+{
+    emeraldsCounter.textContent = 0;
+    state.score = 0;
+    cursorsValue.textContent = 0;
+    state.cursors = 0;
+    pickaxesValue.textContent = 0;
+    state.pickaxes = 0;
+    dynamitesValue.textContent = 0;
+    state.dynamites = 0;
+}
+
+// Reset Всех Цен
+function ResetStatePrices() 
+{
+    // Установка Цен По Умолчанию 
+    state.items.Cursor.cost = 10;
+    state.items.Pickaxe.cost = 50;
+    state.items.Dynamite.cost = 100;
+
+    // Обновление UI 
+    document.getElementById("cursorCost").innerText = state.items.Cursor.cost;
+    document.getElementById("pickaxeCost").innerText = state.items.Pickaxe.cost;
+    document.getElementById("dynamiteCost").innerText = state.items.Dynamite.cost;
+}
+
+//#endregion
+
 
 
 // РАБОЧИЙ КОД - необходимо в настройках добавить Сохранить файл, Загрузить из файла
