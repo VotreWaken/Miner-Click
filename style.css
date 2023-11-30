@@ -93,7 +93,7 @@ body {
 /* ============= sectionMiddle ========= */
 #sectionMiddle {
   width: 50%;
-  min-width: 100px;
+  min-width: 400px;
   background: url("img/backLeft2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
