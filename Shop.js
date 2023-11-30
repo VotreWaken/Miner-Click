@@ -9,6 +9,7 @@ let cursorInterval;
 let pickaxeInterval;
 let dynamiteInterval;
 
+
 // Add Buy Events To HTML Elements
 document.getElementById("cursorItem").addEventListener("click", function () {
   buyItem("Cursor");
@@ -29,6 +30,7 @@ window.addEventListener("load", (event) => {
   loadLocalPrice();
   //collectOfflineResources();
   updateShop();
+  UpdateCursorsImages()
 });
 
 // Buy Item Handler
@@ -107,7 +109,7 @@ function UpdateCursorsImages() {
   cursorsImagesContainer.innerHTML = "";
 
   // Максимальное количество курсоров для отображения
-  const maxCursorsToShow = 20;
+  const maxCursorsToShow = 30;
 
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.cursors && i < maxCursorsToShow; i++) {

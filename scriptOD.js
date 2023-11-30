@@ -62,8 +62,8 @@ document.addEventListener("click", function () {
   let backgroundMusic1 = document.getElementById("backgroundMusic1");
   // Воспроизведение музыки
 
-  backgroundMusic.play();
-  backgroundMusic1.play();
+  // backgroundMusic.play();
+  // backgroundMusic1.play();
   // Пауза музыки
   // backgroundMusic.pause();
 

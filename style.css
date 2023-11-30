@@ -265,7 +265,7 @@ body {
 
 /* //////////////////////////////////////////// */
 .cursorImage {
-  width: 3%;
+  width: 35px;
   height: auto;
 }
 .main {
@@ -279,7 +279,7 @@ body {
   align-items: center;
   border: solid rgb(15, 65, 65) 2px;
   border-radius: 10px;
-  width: 100%;
+  width: 97%;
   height: max-content;
   margin: 10px 5px;
   font-size: 0.8em;
