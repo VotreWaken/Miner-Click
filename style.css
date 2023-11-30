@@ -122,22 +122,23 @@ body {
   position: absolute;
   border-radius: 5px;
   box-shadow: 
-  0px 1px 0px rgba(250, 180, 150, 0.75) inset,          
-  0px 0px 0px 1px rgba(75, 71, 71, 0.75),
-  0px 2px 3px rgba(250, 180, 150, 0.5) inset,
-  0px 1px 0px 1px rgba(250, 180, 150, 0.25);
+  0px 2px 0px rgba(101, 168, 101, 0.75) inset,          
+  0px 0px 0px 1px rgba(115, 199, 115, 0.75),
+  0px 2px 3px rgba(150, 250, 212, 0.5) inset,
+  0px 1px 0px 1px rgba(150, 250, 195, 0.25);
   padding: 6px 12px;
   font-family: "Merriweather Sans", sans-serif; 
   font-size: 14px;
+  color: white;
   position: relative;
-  background-color: rgb(173, 158, 199);
+  background-color: rgba(138, 101, 202, 0.9);
 }
 #options:hover,
 #stats:hover,
 #info:hover,
 #legacy:hover {
-  background-color: rgb(130, 207, 153);
-  box-shadow: 0 0 16px rgba(134, 38, 14, 0.9);
+  background-color: rgba(111, 168, 128, 0.8);
+  box-shadow: 0 0 16px rgba(39, 134, 39, 0.9);
   transition: 0.2s;
   cursor: pointer;
 }
@@ -429,4 +430,12 @@ a {
   75% {
     transform: translate(0, 160%);
   }
+}
+/* ============= кнопка info ========= */
+
+#info_modal h2 {
+  font-size: 22px;
+    padding-left: 16px;
+    margin-bottom: 8px;
+    background: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0));
 }
