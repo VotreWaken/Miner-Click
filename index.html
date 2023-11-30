@@ -14,13 +14,12 @@
   </head>
 
   <body>
-
     <!-- //////////////////// preloader ////////////////////////////////-->
     <div id="preloader">
-      <img src="img/blue.png">
-      <img src="img/orange.png">
-      <img src="img/green.png">
-      <img src="img/purple.png">
+      <img src="img/blue.png" />
+      <img src="img/orange.png" />
+      <img src="img/green.png" />
+      <img src="img/purple.png" />
     </div>
 
     <!-- //////////////////////////////////////////////////////////////////////// -->
@@ -28,16 +27,30 @@
     <div id="options_modal" class="modal">
       <ul>
         <li>
-          <div id="volume"> 
-            <img id="imgVolume" src="img\volume.png"><input type="range" id="rangeinput" min="0" max="1" step="0.01" value="1">
+          <div id="volume">
+            <img id="imgVolume" src="img\volume.png" /><input
+              type="range"
+              id="rangeinput"
+              min="0"
+              max="1"
+              step="0.01"
+              value="1"
+            />
           </div>
         </li>
         <li>
-          <a id="toFile" href=""><button id="saveFile">Save game to file</button></a>
+          <a id="toFile" href=""
+            ><button id="saveFile">Save game to file</button></a
+          >
         </li>
         <li>
           <label id="load" for="fromFile">Load game from file</label>
-          <input id="fromFile" type="file" style="display: none;" accept=".txt"></input>
+          <input
+            id="fromFile"
+            type="file"
+            style="display: none"
+            accept=".txt"
+          />
         </li>
         <li>option4</li>
         <li>option5</li>
@@ -56,24 +69,28 @@
     </div>
     <div id="stats_modal" class="modal">
       <ul>
-        
         <li>stats1</li>
         <li>NowGems:&nbsp;&nbsp;<span id="nowGems">0</span></li>
-        <li>Improvements:
+        <li>
+          Improvements:
           <ul>
-            <li>Cursor:&nbsp;&nbsp;
+            <li>
+              Cursor:&nbsp;&nbsp;
               <span id="cursors">0</span>
             </li>
-            <li>Pickaxe:&nbsp;&nbsp;
+            <li>
+              Pickaxe:&nbsp;&nbsp;
               <span id="pickaxes">0</span>
             </li>
-            <li>Dynamite:&nbsp;&nbsp;
+            <li>
+              Dynamite:&nbsp;&nbsp;
               <span id="dynamites">0</span>
             </li>
-            <li>Total:&nbsp;&nbsp;
+            <li>
+              Total:&nbsp;&nbsp;
               <span id="total">0</span>
             </li>
-          </ul
+          </ul>
         </li>
         <li>ClicksAmount:&nbsp;&nbsp;<span id="clicks">0</span></li>
         <li>stats5</li>
@@ -91,28 +108,33 @@
       <span id="close-btn" style="cursor: pointer; float: right">&times;</span>
     </div>
     <!-- //////////////////// sectionLeft ////////////////////////////////-->
-<div class="wrapper">
-    <div id="sectionLeft">
-      <img
-        id="img"
-        src="img/cristal1.png"
-        style="display: none; width: 10px; height: 10px"
-      />
-      <canvas id="canvas"></canvas>
-      <div id="infoLeft">
-        <div id="factoryName">My Factory</div>
-        <div id="oreCount">
-          <span id="emeraldsCounter">0</span> <span id="mySpan">emeralds</span>
+    <div class="wrapper">
+      <div id="sectionLeft">
+        <img
+          id="img"
+          src="img/cristal1.png"
+          style="display: none; width: 10px; height: 10px"
+        />
+        <canvas id="canvas"></canvas>
+        <div id="infoLeft">
+          <div id="factoryName">My Factory</div>
+          <div id="oreCount">
+            <span id="emeraldsCounter">0</span>
+            <span id="mySpan">emeralds</span>
+          </div>
+          <div id="EmeraldsOnSecond">
+            <span id="EmeraldsInSecond">0</span> <span>In Second</span>
+          </div>
+          <button id="bigButton">
+            <img
+              id="imgButton"
+              draggable="false"
+              src="img/cristalGreen11.png"
+            />
+          </button>
         </div>
-        <div id="EmeraldsOnSecond">
-          <span id="EmeraldsInSecond">0</span> <span>In Second</span>
-        </div>
-        <button  id="bigButton">
-          <img id="imgButton" draggable="false" src="img/cristalGreen11.png" />
-        </button>
       </div>
-    </div>
-    
+
       <!-- //////////////////// sectionLeft ////////////////////////////////-->
 
       <div id="separatorVert"></div>
@@ -121,7 +143,7 @@
       <div id="sectionMiddle">
         <div id="menu">
           <div class="col1">
-            <button id="options">Options</button> 
+            <button id="options">Options</button>
             <button id="stats">Stats</button>
           </div>
 
@@ -143,8 +165,10 @@
           <div id="rows">
             <div class="row1">
               <div class="main">
-                Шахты <span id="cursorsValue">0</span></div>
+                <div>Шахты <span id="cursorsValue">0</span></div>
                 <div id="cursorsImagesContainer"></div>
+              </div>
+
               <div id="separatorHoriz"></div>
             </div>
             <div class="row2">
@@ -170,33 +194,37 @@
 
       <!-- //////////////////// sectionRight ////////////////////////////////-->
       <div id="sectionRight">
-        <div id="store">
-          <div id="storeTitle">
-            <div id="cursorItem">
-              <img src="Картинки для проекта JS/1.png" alt="" />
-              <h2>Buy Cursor (Cost: <span id="cursorCost">10</span>)</h2>
-            </div>
-            <div id="pickaxeItem">
-              <img src="Картинки для проекта JS/7.png" alt="" />
-              <h2>Buy Pickaxe (Cost: <span id="pickaxeCost">50</span>)</h2>
-            </div>
-            <div id="dynamiteItem">
-              <img src="Картинки для проекта JS/10.png" alt="" />
-              <h2>Buy Dynamite (Cost: <span id="dynamiteCost">100</span>)</h2>
-            </div>
-          </div>
+        <div id="storeTitle">
+          <button id="cursorItem" class="items">
+              <img src="Картинки для проекта JS/1.png" alt="cursor" class="itemImage"/>
+              <div class="itemInfo">
+                <h2>Buy Cursor</h2>
+                <p>Cost: <span id="cursorCost">10</span></p>
+            </button>
+            <button id="pickaxeItem" class="items">
+              <img src="Картинки для проекта JS/7.png" alt="pickaxe" class="itemImage"/>
+              <div class="itemInfo">
+                <h2>Buy Pickaxe </h2>
+                <p>Cost: <span id="pickaxeCost">50</span></p>
+              </div>
+            </button>
+            <button id="dynamiteItem" class="items">
+              <img src="Картинки для проекта JS/10.png" alt="dynamite" class="itemImage"/>
+              <div class="itemInfo">
+                <h2>Buy Dynamite</h2>
+                <p>Cost: <span id="dynamiteCost">100</span></p>
+              </div>
+            </button>
         </div>
       </div>
 
       <!-- //////////////////// sectionRight ////////////////////////////////-->
     </div>
-    <audio id="backgroundMusic" loop >
-      <source src="sound/back_track1.mp3" type="audio/mp3">
-      
-  </audio>
-  <audio id="backgroundMusic1" loop >
-    <source src="sound/back_track2.mp3" type="audio/mp3">
-    
-</audio>
+    <audio id="backgroundMusic" loop>
+      <source src="sound/back_track1.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="backgroundMusic1" loop>
+      <source src="sound/back_track2.mp3" type="audio/mp3" />
+    </audio>
   </body>
 </html>

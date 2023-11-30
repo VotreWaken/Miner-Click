@@ -190,9 +190,12 @@ body {
 
 /* ============= sectionRight ========= */
 #sectionRight {
-  border: 2px solid pink;
   width: 20%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: url("img/backRightCristal.jpg");
 }
 /* ////////////////////////////////////////////////////////////////
@@ -261,41 +264,67 @@ body {
 }
 
 /* //////////////////////////////////////////// */
-#cursorItem,
-#pickaxeItem,
-#dynamiteItem {
-  display: flex;
-  border: solid red 2px;
-  width: 380px;
-  height: 200px;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#cursorItem h2,
-p {
-  width: auto;
+.cursorImage {
+  width: 3%;
   height: auto;
 }
-
-#pickaxeItem img {
-  border: solid black 2px;
-  width: 40px;
-  height: 40px;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.items {
+  display: flex;
+  align-items: center;
+  border: solid rgb(15, 65, 65) 2px;
+  border-radius: 10px;
+  width: 100%;
+  height: max-content;
+  margin: 10px 5px;
+  font-size: 0.8em;
+  flex-direction: row;
+  background: rgba(54, 148, 11, 0.603);
+  padding: 5px;
+}
+.items:hover {
+  background: rgb(54, 148, 11);
+  box-shadow: 0px 0px 14px rgba(255, 162, 0, 1);
+}
+.itemInfo {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-#cursorItem img {
-  border: solid black 2px;
-  width: 40px;
-  height: 40px;
+.itemInfo h2 {
+  letter-spacing: 3px;
+  background-color: rgb(0, 140, 255);
+  background: linear-gradient(
+    20deg,
+    rgba(0, 241, 255, 1) 25%,
+    rgba(255, 255, 0, 1) 75%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.itemInfo p {
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: gold;
+}
+.itemInfo p span {
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: cornflowerblue;
 }
 
-#dynamiteItem img {
-  border: solid black 2px;
-  width: 40px;
-  height: 40px;
+.itemImage {
+  height: 100%;
+  width: 20%;
 }
-
 .transformed {
   transform: translateY(150px); /* потднимает элемент img изумруд вверх */
 }
