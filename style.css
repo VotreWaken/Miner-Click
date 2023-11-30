@@ -110,11 +110,6 @@ body {
   background: url("img/midLeft.png") no-repeat top left,
     url("img/midRight.png") no-repeat top right;
 }
-#comment {
-  margin: 24px;
-  font-size: 0.7em;
-  font-weight: 100;
-}
 .col1,
 .col3 {
   position: relative;
