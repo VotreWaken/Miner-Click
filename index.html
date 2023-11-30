@@ -10,6 +10,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="module" src="./Achievements.js" defer></script>
     <script defer type="module" src="Shop.js"></script>
+    <script type="module" src="stats.js"></script>
   </head>
 
   <body>
@@ -32,11 +33,11 @@
           </div>
         </li>
         <li>
-          <button id="saveFile"><a id="toFile" href="">Save game to file</a></button>
+          <a id="toFile" href=""><button id="saveFile">Save game to file</button></a>
         </li>
         <li>
           <label id="load" for="fromFile">Load game from file</label>
-          <input id="fromFile" type="file" style="visibility:hidden;" accept=".txt"></input>
+          <input id="fromFile" type="file" style="display: none;" accept=".txt"></input>
         </li>
         <li>option4</li>
         <li>option5</li>
@@ -55,10 +56,26 @@
     </div>
     <div id="stats_modal" class="modal">
       <ul>
+        
         <li>stats1</li>
-        <li>stats2</li>
-        <li>stats3</li>
-        <li>stats4</li>
+        <li>NowGems:&nbsp;&nbsp;<span id="nowGems">0</span></li>
+        <li>Improvements:
+          <ul>
+            <li>Cursor:&nbsp;&nbsp;
+              <span id="cursors">0</span>
+            </li>
+            <li>Pickaxe:&nbsp;&nbsp;
+              <span id="pickaxes">0</span>
+            </li>
+            <li>Dynamite:&nbsp;&nbsp;
+              <span id="dynamites">0</span>
+            </li>
+            <li>Total:&nbsp;&nbsp;
+              <span id="total">0</span>
+            </li>
+          </ul
+        </li>
+        <li>ClicksAmount:&nbsp;&nbsp;<span id="clicks">0</span></li>
         <li>stats5</li>
       </ul>
       <span id="close-btn" style="cursor: pointer; float: right">&times;</span>

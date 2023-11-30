@@ -1,391 +1,405 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  font-family: "Merriweather Sans", sans-serif;
 }
 .wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;    
-    font-weight: 600;
-    font-size:28px;
-	text-shadow:0px 1px 4px #000;
-	color:#fff;
-    font-family: 'Merriweather Sans', sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 600;
+  font-size: 28px;
+  text-shadow: 0px 1px 4px #000;
+  color: #fff;
 }
 #separatorVert {
-    width: 16px;
-    height: 100%;
-    background: url("https://orteil.dashnet.org/cookieclicker/img/panelGradientTop.png") no-repeat top left,
-    url("https://orteil.dashnet.org/cookieclicker/img/panelGradientBottom.png") no-repeat bottom left,
-    url("https://orteil.dashnet.org/cookieclicker/img/panelVertical.png?v=2") repeat-y;
+  width: 16px;
+  height: 100%;
+  background: url("https://orteil.dashnet.org/cookieclicker/img/panelGradientTop.png")
+      no-repeat top left,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelGradientBottom.png")
+      no-repeat bottom left,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelVertical.png?v=2")
+      repeat-y;
 }
 /* ============= sectionLeft ========= */
 #sectionLeft {
-    width: 30%;
-    /* min-width: 300px; */
-    position:relative;
-    background: url("img/BackL2.jpg") center;
+  width: 30%;
+  /* min-width: 300px; */
+  position: relative;
+  background: url("img/BackL2.jpg") center;
 }
 #canvas {
-    position: absolute;
-    z-index: -5;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  z-index: -5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 #infoLeft {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
-#factoryName, #oreCount {
-    width: 50%;
-    padding: 24px;
-    margin: 32px;
-    background: rgba(150, 127, 127, 0.4);
-    border-radius: 24px;
-    padding: 4px 0px;
-    color: rgba(255,255,255,0.8);
-
+#factoryName,
+#oreCount {
+  width: 50%;
+  padding: 24px;
+  margin: 32px;
+  background: rgba(150, 127, 127, 0.4);
+  border-radius: 24px;
+  padding: 4px 0px;
+  color: rgba(255, 255, 255, 0.8);
 }
 #factoryName:hover {
-    color: #ffffff;
-  text-shadow:
-    0 0 1px #fff,
-    0 0 5px #fff,
-    0 0 10px rgb(223, 243, 133),
-    0 0 15px rgb(223, 243, 133),
-    0 0 20px rgb(223, 243, 133);
+  color: #ffffff;
+  text-shadow: 0 0 1px #fff, 0 0 5px #fff, 0 0 10px rgb(223, 243, 133),
+    0 0 15px rgb(223, 243, 133), 0 0 20px rgb(223, 243, 133);
 }
 #bigButton {
-    padding: 16px;
-    margin: 32px;
-    border: 4px solid red;
-
-    width: 350px;
-    height: 400px;
-    background-color: rgba(28,28,28,0);
-    background-repeat: no-repeat;
-    border-radius: 128px;
-    border: none;
+  padding: 16px;
+  margin: 32px;
+  border: 4px solid red;
+  width: 350px;
+  height: 400px;
+  background-color: rgba(28, 28, 28, 0);
+  background-repeat: no-repeat;
+  border-radius: 128px;
+  border: none;
 }
 #imgButton {
-    width: 350px;
-    height:auto;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out
+  width: 350px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
 /* ============= sectionMiddle ========= */
 #sectionMiddle {
-    width: 50%;
-    min-width: 100px;
-    background: url("img/backLeft2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 50%;
+  min-width: 100px;
+  background: url("img/backLeft2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #menu {
-    width: 100%;
-    height: auto;
-    min-height: 100px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;
-    background: url("img/midLeft.png") no-repeat top left, url("img/midRight.png") no-repeat top right;
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background: url("img/midLeft.png") no-repeat top left,
+    url("img/midRight.png") no-repeat top right;
 }
 #comment {
-    margin: 24px;
-    font-size: 0.7em;
-    font-weight: 100;
+  margin: 24px;
+  font-size: 0.7em;
+  font-weight: 100;
 }
-.col1, .col3 {
-    position: relative;
-    width: 30%;
+.col1,
+.col3 {
+  position: relative;
+  width: 30%;
 }
-#options, #stats, #info, #legacy{
-    position:absolute;
-    border-radius: 5px;
-    box-shadow: 0px 1px 0px rgba(250,180,150,0.75) inset, 0px 0px 0px 1px rgba(75, 71, 71, 0.75), 0px 2px 3px rgba(250,180,150,0.5) inset, 0px 1px 0px 1px rgba(250,180,150,0.25);
-    padding: 6px 12px;
-    font-size: 14px;
-    position: relative;
-    background-color: rgb(159, 130, 207);
+#options,
+#stats,
+#info,
+#legacy {
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(250, 180, 150, 0.75) inset,
+    0px 0px 0px 1px rgba(75, 71, 71, 0.75),
+    0px 2px 3px rgba(250, 180, 150, 0.5) inset,
+    0px 1px 0px 1px rgba(250, 180, 150, 0.25);
+  padding: 6px 12px;
+  font-size: 14px;
+  position: relative;
+  background-color: rgb(159, 130, 207);
 }
-#options:hover, #stats:hover, #info:hover, #legacy:hover{
-    background-color: rgb(130, 183, 207);
-    box-shadow: 0 0 16px rgba(134, 38, 14, 0.9);
-    transition: 0.2s;
+#options:hover,
+#stats:hover,
+#info:hover,
+#legacy:hover {
+  background-color: rgb(130, 183, 207);
+  box-shadow: 0 0 16px rgba(134, 38, 14, 0.9);
+  transition: 0.2s;
 }
 #options {
-    top: -4px;
-    left: 4px;
+  top: -4px;
+  left: 4px;
 }
 #stats {
-    bottom: -4px;
-    left: 4px;
+  bottom: -4px;
+  left: 4px;
 }
 #info {
-    top: -4px;
-    right: 4px;
+  top: -4px;
+  right: 4px;
 }
 #legacy {
-    bottom: -4px;
-    right: 4px;
+  bottom: -4px;
+  right: 4px;
 }
 #separatorHoriz {
-    width: 100%;
-    height: 16px;
-    background: url("https://orteil.dashnet.org/cookieclicker/img/panelGradientLeft.png") no-repeat top left,
-    url("https://orteil.dashnet.org/cookieclicker/img/panelGradientRight.png") no-repeat top right,
-    url("https://orteil.dashnet.org/cookieclicker/img/panelHorizontal.png?v=2") repeat-x;
+  width: 100%;
+  height: 16px;
+  background: url("https://orteil.dashnet.org/cookieclicker/img/panelGradientLeft.png")
+      no-repeat top left,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelGradientRight.png")
+      no-repeat top right,
+    url("https://orteil.dashnet.org/cookieclicker/img/panelHorizontal.png?v=2")
+      repeat-x;
 }
 /* ---------- centerAreaBlock ---------- */
 #centerArea {
-    height: auto;
-    font-size: 0.6em;
+  height: auto;
+  font-size: 0.6em;
 }
 #rows {
-    display: flex;
-    flex-direction: column;
-    /* visibility: hidden; */
-    /* этот блок будет менять видимость. На его 
+  display: flex;
+  flex-direction: column;
+  /* visibility: hidden; */
+  /* этот блок будет менять видимость. На его 
     месте будут открываться настройки*/
 }
 .main {
-    width: 100%;
-    height: 100px;
-    /* заменить фон - вставлять шахты и прочее через position */
-    background: rgba(148, 92, 18, 0.164);
+  width: 100%;
+  height: 100px;
+  /* заменить фон - вставлять шахты и прочее через position */
+  background: rgba(148, 92, 18, 0.164);
 }
 
 /* ============= sectionRight ========= */
 #sectionRight {
-    border: 2px solid pink;
-    width: 20%;
-    height: 100%;
-    background: url("img/backRightCristal.jpg");
+  border: 2px solid pink;
+  width: 20%;
+  height: 100%;
+  background: url("img/backRightCristal.jpg");
 }
 /* ////////////////////////////////////////////////////////////////
 //МОДАЛЬНЫЕ ОКНА  */
 .modal {
-    height: 40% ;
-    width: 15%;
-    display: none ;
-    flex-direction: row;
-    justify-content:flex-start;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: url("img/backR.jpg");
-    padding: 20px;
-    border: 2px solid lime;
-    border-radius: 15px;
-    z-index: 1000;
+  height: auto;
+  width: 30%;
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("img/backR.jpg");
+  padding: 20px;
+  border: 2px solid lime;
+  border-radius: 15px;
+  z-index: 1000;
 }
-.modal ul{
-    width: 60%;
-    margin: auto;
-    margin-top: 50px;
-    position: relative;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
+#options_modal ul {
+  width: 50%;
 }
-.modal ul li{
-    color: white;
-    list-style: none;
+.modal ul {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-.modal span{
-    width: fit-content;
-    height: fit-content;
-    color: greenyellow;
+.modal ul li {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+}
+.modal ul li ul {
+  padding-top: 20px;
+}
+.modal ul li ul li {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  color: white;
+  justify-content: flex-start;
+}
+.modal span {
+  width: fit-content;
+  height: fit-content;
+  color: greenyellow;
 }
 
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
 }
-
 
 /* //////////////////////////////////////////// */
-#cursorItem, #pickaxeItem, #dynamiteItem
-{
-    display: flex;
-    border: solid red 2px;
-    width: 380px;
-    height: 200px;
-    align-items: center;
-    justify-content: space-around;
+#cursorItem,
+#pickaxeItem,
+#dynamiteItem {
+  display: flex;
+  border: solid red 2px;
+  width: 380px;
+  height: 200px;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#cursorItem h2, p
-{
-    width: auto;
-    height: auto;
+#cursorItem h2,
+p {
+  width: auto;
+  height: auto;
 }
 
-#pickaxeItem img
-{
-    border: solid black 2px;
-    width: 40px;
-    height: 40px;
+#pickaxeItem img {
+  border: solid black 2px;
+  width: 40px;
+  height: 40px;
 }
 
-#cursorItem img 
-{
-    border: solid black 2px;
-    width: 40px;
-    height: 40px;
+#cursorItem img {
+  border: solid black 2px;
+  width: 40px;
+  height: 40px;
 }
 
-#dynamiteItem img 
-{
-    border: solid black 2px;
-    width: 40px;
-    height: 40px;
+#dynamiteItem img {
+  border: solid black 2px;
+  width: 40px;
+  height: 40px;
 }
 
 .transformed {
-    transform: translateY(150px); /* потднимает элемент img изумруд вверх */
-  }
-  #dinamicImg {
-    position: absolute;
-    left: 270px; /* Установите желаемое значение координаты left */
-    top: 200px;  /* Установите желаемое значение координаты top */
-    width: 40px;
-    height: 40px;
-    transition: transform 0.6s ease;
-  }
+  transform: translateY(150px); /* потднимает элемент img изумруд вверх */
+}
+#dinamicImg {
+  position: absolute;
+  left: 270px; /* Установите желаемое значение координаты left */
+  top: 200px; /* Установите желаемое значение координаты top */
+  width: 40px;
+  height: 40px;
+  transition: transform 0.6s ease;
+}
+a {
+  width: 57%;
+  height: 40px;
+  background: rgba(255, 208, 0, 0.788);
+  border: 2px solid rgb(247, 78, 11);
+  border-radius: 10px;
+}
+#saveFile {
+  background: transparent;
+  border: none !important;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: rgb(247, 78, 11);
+}
+#imgVolume {
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+}
+#volume {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 208, 0, 0.788);
+  border: 2px solid rgb(247, 78, 11);
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+#load {
+  width: max-content;
+  background: rgba(255, 208, 0, 0.788);
+  border: 2px solid rgb(247, 78, 11);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: rgb(247, 78, 11);
+}
+#imgButton.pulse {
+  transform: scale(1.2);
+}
 
-  #imgVolume{
-    width: 30px;
-    height: 30px;
-    margin-top: 15px;
-  }
-  #volume{
-    display: flex;
-  }
-  #imgButton.pulse{
-    transform: scale(1.2);
-  }
+/* ============= preloader загрузочный экран ========= */
+#preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+#preloader img {
+  border: 0;
+  margin: 0;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+  z-index: 1000;
+}
 
+#preloader :first-child {
+  background: transparent;
+  animation-delay: -1.5s;
+}
+#preloader :nth-child(2) {
+  background: transparent;
+  animation-delay: -1s;
+}
+#preloader :nth-child(3) {
+  background: transparent;
+  animation-delay: -0.5s;
+}
+#preloader :nth-child(4) {
+  background: transparent;
+}
 
-  /* ============= preloader загрузочный экран ========= */
-  #preloader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+@keyframes spin {
+  0%,
+  100% {
+    transform: translate(0);
   }
-  #preloader img {
-    border: 0;
-    margin: 0;
-    width: 100px;
-    height: 70px;
-    position: absolute;
-    top: 40%;
-    left: 45%;
-    border-radius: 50%;
-    animation: spin 2s ease infinite;
-    z-index: 1000;
+  25% {
+    transform: translate(160%);
   }
-  
-  #preloader :first-child {
-    background: transparent;
-    animation-delay: -1.5s;
+  50% {
+    transform: translate(160%, 160%);
   }
-  #preloader :nth-child(2) {
-    background: transparent;
-    animation-delay: -1s;
+  75% {
+    transform: translate(0, 160%);
   }
-  #preloader :nth-child(3) {
-    background: transparent;
-    animation-delay: -0.5s;
-  }
-  #preloader :nth-child(4) {
-    background: transparent;
-  }
-  
-  @keyframes spin {
-    0%,
-    100% {
-      transform: translate(0);
-    }
-    25% {
-      transform: translate(160%);
-    }
-    50% {
-      transform: translate(160%, 160%);
-    }
-    75% {
-      transform: translate(0, 160%);
-    }
-  }
-
-  /* Достижения */
-  .achievement-notification {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background-color: #eee;
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-    max-width: 300px;
-    width: auto;
-    max-height: 300px;
-    height: auto;
-  }
-
-  .achievement-notification img 
-  {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  /* Элементы Div в центре */
-  .black-background 
-  {
-    width: 20px;
-    height: 20px;
-    background-color: black;
-    display: inline-block;
-  }
-
-  #cursorsImagesContainer
-  {
-    display: flex;
-  }
+}
