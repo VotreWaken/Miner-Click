@@ -34,7 +34,7 @@
               min="0"
               max="1"
               step="0.01"
-              value="1"
+              value="0.5"
             />
           </div>
         </li>
@@ -50,8 +50,6 @@
             accept=".txt"
           />
         </li>
-        <li>option4</li>
-        <li>option5</li>
       </ul>
       <span id="close-btn" style="cursor: pointer; float: right"><img src="img/close.png" alt=""></span>
     </div>
@@ -67,7 +65,6 @@
     </div>
     <div id="stats_modal" class="modal">
       <ul>
-        <li>stats1</li>
         <li>NowGems:&nbsp;&nbsp;<span id="nowGems">0</span></li>
         <li>
           Improvements:
@@ -91,7 +88,6 @@
           </ul>
         </li>
         <li>ClicksAmount:&nbsp;&nbsp;<span id="clicks">0</span></li>
-        <li>stats5</li>
       </ul>
       <span id="close-btn" style="cursor: pointer; float: right"><img src="img/close.png" alt=""></span>
     </div>
@@ -175,7 +171,7 @@
           <div id="rows">
             <div class="row1">
               <div class="main">
-                <div>Шахты <span id="cursorsValue">0</span></div>
+                <div>Шахты:<span id="cursorsValue">0</span></div>
                 <div id="cursorsImagesContainer"></div>
               </div>
 
@@ -183,14 +179,26 @@
             </div>
             <div class="row2">
               <div class="main">
-                Бурмашина <span id="pickaxesValue">0</span>
+                Бурмашины:<span id="pickaxesValue">0</span>
               </div>
               <div id="separatorHoriz"></div>
             </div>
 
             <div class="row3">
               <div class="main">
-                Еще что-то <span id="dynamitesValue">0</span>
+                Динамит:<span id="dynamitesValue">0</span>
+              </div>
+              <div id="separatorHoriz"></div>
+            </div>
+            <div class="row3">
+              <div class="main">
+                Шахтеры:<span id="minersValue">0</span>
+              </div>
+              <div id="separatorHoriz"></div>
+            </div>
+            <div class="row3">
+              <div class="main">
+                Бульдозеры: <span id="dynamitesValue">0</span>
               </div>
               <div id="separatorHoriz"></div>
             </div>
@@ -206,23 +214,37 @@
       <div id="sectionRight">
         <div id="storeTitle">
           <button id="cursorItem" class="items">
-              <img src="Картинки для проекта JS/1.png" alt="cursor" class="itemImage"/>
+              <img src="img/cursor.png" alt="cursor" class="itemImage"/>
               <div class="itemInfo">
                 <h2>Buy Cursor</h2>
                 <p>Cost: <span id="cursorCost">10</span></p>
             </button>
             <button id="pickaxeItem" class="items">
-              <img src="Картинки для проекта JS/7.png" alt="pickaxe" class="itemImage"/>
+              <img src="img/pickaxe.png" alt="pickaxe" class="itemImage"/>
               <div class="itemInfo">
                 <h2>Buy Pickaxe </h2>
                 <p>Cost: <span id="pickaxeCost">50</span></p>
               </div>
             </button>
             <button id="dynamiteItem" class="items">
-              <img src="Картинки для проекта JS/10.png" alt="dynamite" class="itemImage"/>
+              <img src="img/dynamite.png" alt="dynamite" class="itemImage"/>
               <div class="itemInfo">
                 <h2>Buy Dynamite</h2>
                 <p>Cost: <span id="dynamiteCost">100</span></p>
+              </div>
+            </button>
+            <button id="minerItem" class="items">
+              <img src="img/miner.png" alt="dynamite" class="itemImage"/>
+              <div class="itemInfo">
+                <h2>Buy Miner</h2>
+                <p>Cost: <span id="minerCost">150</span></p>
+              </div>
+            </button>
+            <button id="buldoserItem" class="items">
+              <img src="img/bulldozer.png" alt="dynamite" class="itemImage"/>
+              <div class="itemInfo">
+                <h2>Buy Buldozer</h2>
+                <p>Cost: <span id="bulldozerCost">200</span></p>
               </div>
             </button>
         </div>

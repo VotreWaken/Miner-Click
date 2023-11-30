@@ -8,7 +8,6 @@ const statsBtn = document.getElementById("stats");
 statsBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   const allItemsCount = +state.pickaxes + +state.dynamites + +state.cursors;
-  console.log(allItemsCount);
   document.getElementById("nowGems").textContent = state.score.toLocaleString();
   document.getElementById("pickaxes").textContent = state.pickaxes;
   document.getElementById("dynamites").textContent = state.dynamites;
