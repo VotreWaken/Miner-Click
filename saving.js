@@ -110,10 +110,10 @@ function loadLocal() {
           state.items.Dynamite.cost = parseInt(localStorage.getItem(key));
           break;
         case "minerCost":
-          state.items.Dynamite.cost = parseInt(localStorage.getItem(key));
+          state.items.Miner.cost = parseInt(localStorage.getItem(key));
           break;
         case "bulldozerCost":
-          state.items.Dynamite.cost = parseInt(localStorage.getItem(key));
+          state.items.Bulldozer.cost = parseInt(localStorage.getItem(key));
           break;
 
         // Обработка Получения Уже Полученных Достижений
@@ -291,8 +291,7 @@ function ResetStatePrices() {
   document.getElementById("pickaxeCost").innerText = state.items.Pickaxe.cost;
   document.getElementById("dynamiteCost").innerText = state.items.Dynamite.cost;
   document.getElementById("minerCost").innerText = state.items.Miner.cost;
-  document.getElementById("bulldozerCost").innerText =
-    state.items.Bulldozer.cost;
+  document.getElementById("bulldozerCost").innerText = state.items.Bulldozer.cost;
 }
 
 //#endregion
@@ -310,7 +309,7 @@ document.getElementById("toFile").onclick = function () {
   map.set(pickaxesValue.id, pickaxesValue.textContent);
   map.set(dynamitesValue.id, dynamitesValue.textContent);
   map.set(minersValue.id, minersValue.textContent);
-  map.set(minersValue.id, minersValue.textContent);
+  map.set(bulldozersValue.id, bulldozersValue.textContent);
 
   let mySerialMap = JSON.stringify(Array.from(map.entries()));
   console.log(mySerialMap);
@@ -365,11 +364,11 @@ function gameRecover(map) {
         dynamitesValue.textContent = value;
         state.dynamites = value;
         break;
-      case "dynamitesValue":
+      case "minersValue":
         minersValue.textContent = value;
         state.miners = value;
         break;
-      case "dynamitesValue":
+      case "bulldozersValue":
         bulldozersValue.textContent = value;
         state.bulldozers = value;
         break;
