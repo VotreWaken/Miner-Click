@@ -9,7 +9,6 @@ let cursorInterval;
 let pickaxeInterval;
 let dynamiteInterval;
 
-
 // Add Buy Events To HTML Elements
 document.getElementById("cursorItem").addEventListener("click", function () {
   buyItem("Cursor");
@@ -22,6 +21,12 @@ document.getElementById("pickaxeItem").addEventListener("click", function () {
 document.getElementById("dynamiteItem").addEventListener("click", function () {
   buyItem("Dynamite");
 });
+document.getElementById("minerItem").addEventListener("click", function () {
+  buyItem("Miner");
+});
+document.getElementById("dynamiteItem").addEventListener("click", function () {
+  buyItem("Bulldozer");
+});
 
 // Add OnLoad Event To HTML Window
 // Starts Intervals that are Responsible for
@@ -30,7 +35,7 @@ window.addEventListener("load", (event) => {
   loadLocalPrice();
   //collectOfflineResources();
   updateShop();
-  UpdateCursorsImages()
+  UpdateCursorsImages();
 });
 
 // Buy Item Handler
@@ -72,6 +77,18 @@ export function buyItem(item) {
       case "Dynamite":
         state.dynamites++;
         updateDynamites();
+        checkAchievements();
+        break;
+      // Increase Miner Count And Update UI for that
+      case "Miner":
+        state.miners++;
+        updateMiners();
+        checkAchievements();
+        break;
+      // Increase Bulldozer Count And Update UI for that
+      case "Bulldozer":
+        state.bulldozers++;
+        updateBulldozers();
         checkAchievements();
         break;
     }
@@ -124,6 +141,16 @@ function UpdateCursorsImages() {
 // Update UI of Pickaxes Count
 function updatePickaxes() {
   document.getElementById("pickaxesValue").innerText = state.pickaxes;
+}
+
+// Update UI of Dynamites Count
+function updateDynamites() {
+  document.getElementById("dynamitesValue").innerText = state.dynamites;
+}
+
+// Update UI of Dynamites Count
+function updateDynamites() {
+  document.getElementById("minersValue").innerText = state.dynamites;
 }
 
 // Update UI of Dynamites Count
