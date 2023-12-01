@@ -131,7 +131,7 @@ function UpdateCursorsImages() {
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.cursors && i < maxCursorsToShow; i++) {
     const cursorImage = document.createElement("img");
-    cursorImage.src = "/img/cursor.png";
+    cursorImage.src = "img/cursor.png";
     cursorImage.id = "cursorImage" + i;
     cursorImage.classList.add("itemimage");
     cursorsImagesContainer.appendChild(cursorImage);
@@ -156,7 +156,7 @@ function UpdatePickaxesImages() {
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.pickaxes && i < maxPickaxesToShow; i++) {
     const pickaxeImage = document.createElement("img");
-    pickaxeImage.src = "/img/pickaxe.png";
+    pickaxeImage.src = "img/pickaxe.png";
     pickaxeImage.id = "pickaxeImage" + i;
     pickaxeImage.classList.add("itemimage");
     pickaxeImagesContainer.appendChild(pickaxeImage);
@@ -181,7 +181,7 @@ function UpdateDynamitesImages() {
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.dynamites && i < maxDynamitesToShow; i++) {
     const dynamiteImage = document.createElement("img");
-    dynamiteImage.src = "/img/dynamite.png";
+    dynamiteImage.src = "img/dynamite.png";
     dynamiteImage.id = "dynamiteImage" + i;
     dynamiteImage.classList.add("itemimage");
     dynamitesImagesContainer.appendChild(dynamiteImage);
@@ -206,7 +206,7 @@ function UpdateMinersImages() {
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.miners && i < maxMinersToShow; i++) {
     const minerImage = document.createElement("img");
-    minerImage.src = "/img/miner.png";
+    minerImage.src = "img/miner.png";
     minerImage.id = "minerImage" + i;
     minerImage.classList.add("itemimage");
     minersImagesContainer.appendChild(minerImage);
@@ -230,7 +230,7 @@ function UpdateBulldozersImages() {
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.bulldozers && i < maxBulldozersToShow; i++) {
     const bulldozerImage = document.createElement("img");
-    bulldozerImage.src = "/img/bulldozer.png";
+    bulldozerImage.src = "img/bulldozer.png";
     bulldozerImage.id = "bulldozerImage" + i;
     bulldozerImage.classList.add("itemimage");
     bulldozersImagesContainer.appendChild(bulldozerImage);
