@@ -8,6 +8,7 @@
     <script type="module" src="scriptOD.js"></script>
     <script type="module" src="saving.js"></script>
     <script type="module" src="quotes.js"></script>
+    <script type="module" src="clear.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="module" src="./Achievements.js" defer></script>
     <script defer type="module" src="Shop.js"></script>
@@ -56,13 +57,12 @@
       <span id="close-btn" style="cursor: pointer; float: right"><img src="img/close.png" alt=""></span>
     </div>
     <div id="legacy_modal" class="modal">
-      <ul>
-        <li>legacy1</li>
-        <li>legacy2</li>
-        <li>legacy3</li>
-        <li>legacy4</li>
-        <li>legacy5</li>
-      </ul>
+      <div>
+        <h2>Clearing achievements</h2>
+        <p>Are you sure you want to clear the results?</p>
+        <p>You will lose your progress and have to start all over again!</p>
+        <button id="clearAll">Clear</button>
+      </div>
       <span id="close-btn" style="cursor: pointer; float: right"><img src="img/close.png" alt=""></span>
     </div>
     <div id="stats_modal" class="modal">
