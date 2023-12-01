@@ -9,9 +9,7 @@ clicks = +localStorage.getItem("clicks");
 
 function incrementD() {
   let spanElement = document.getElementById("emeraldsCounter");
-  console.log(spanElement.textContent);
   let currentScore = parseInt(spanElement.textContent);
-  //console.log(currentScore);
   let newScore = currentScore + 1;
   clicks++;
   localStorage.setItem("clicks", clicks);
