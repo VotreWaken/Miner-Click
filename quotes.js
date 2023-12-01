@@ -25,7 +25,7 @@ div.style.height = "32px";
 div.style.opacity = "0.0";
 div.style.margin = "24px";
 div.style.fontSize = "0.8em";
-div.style.fontWeight = "100";
+div.style.fontWeight = "200";
 
 setInterval(change, 12000);
 
