@@ -69,6 +69,7 @@ body {
   border-radius: 24px;
   padding: 4px 0px;
   color: rgba(255, 255, 255, 0.8);
+  z-index: 100;
 }
 #factoryName:hover {
   color: #ffffff;
@@ -548,3 +549,31 @@ img {
   cursor: pointer;
 }
 /* ///////////////////////////////////////////////// */
+
+  /* Достижения */
+  .achievement-notification {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    width: auto;
+    max-height: 300px;
+    height: auto;
+  }
+
+  .achievement-notification img 
+  {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  #EmeraldsOnSecond
+  {
+    z-index: 100;
+  }
