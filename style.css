@@ -194,8 +194,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background: url("img/backRightCristal.jpg");
+  text-align: center;
+}
+#sectionRight h1{
+  width: 100%;
+  height: fit-content;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, rgba(245, 252, 89, 1) 35%, rgba(255, 0, 0, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent
 }
 /* ////////////////////////////////////////////////////////////////
 //МОДАЛЬНЫЕ ОКНА  */
