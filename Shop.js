@@ -37,8 +37,16 @@ window.addEventListener("load", (event) => {
   loadLocalPrice();
   //collectOfflineResources();
   updateShop();
-  UpdateCursorsImages();
+  updateCenterUI();
 });
+
+function updateCenterUI() {
+  UpdateCursorsImages();
+  UpdatePickaxesImages();
+  UpdateDynamitesImages();
+  UpdateMinersImages();
+  UpdateBulldozersImages();
+}
 
 // Buy Item Handler
 export function buyItem(item) {
@@ -130,35 +138,124 @@ function UpdateCursorsImages() {
   // Максимальное количество курсоров для отображения
   const maxCursorsToShow = 30;
 
-  
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.cursors && i < maxCursorsToShow; i++) {
     const cursorImage = document.createElement("img");
     cursorImage.src = "/img/cursor.png";
     cursorImage.id = "cursorImage" + i;
-    cursorImage.classList.add("cursorImage");
+    cursorImage.classList.add("itemimage");
     cursorsImagesContainer.appendChild(cursorImage);
   }
 }
 
+function UpdatePickaxesImages() {
+  // Получаем Контейнер Для Pickaxe Images
+  const pickaxeImagesContainer = document.getElementById(
+    "pickaxesImagesContainer"
+  );
+
+  // Обнуляем прошлые Картинки
+  pickaxeImagesContainer.innerHTML = "";
+
+  // Максимальное количество курсоров для отображения
+  const maxPickaxesToShow = 30;
+
+  // Инициализируем новые элементы добавляя к ним Image
+  for (let i = 0; i < state.pickaxes && i < maxPickaxesToShow; i++) {
+    const pickaxeImage = document.createElement("img");
+    pickaxeImage.src = "/img/pickaxe.png";
+    pickaxeImage.id = "pickaxeImage" + i;
+    pickaxeImage.classList.add("itemimage");
+    pickaxeImagesContainer.appendChild(pickaxeImage);
+  }
+}
+
+function UpdateDynamitesImages() {
+  // Получаем Контейнер Для Dynamite Images
+  const dynamitesImagesContainer = document.getElementById(
+    "dynamitesImagesContainer"
+  );
+
+  // Обнуляем прошлые Картинки
+  dynamitesImagesContainer.innerHTML = "";
+
+  // Максимальное количество курсоров для отображения
+  const maxDynamitesToShow = 30;
+
+  // Инициализируем новые элементы добавляя к ним Image
+  for (let i = 0; i < state.dynamites && i < maxDynamitesToShow; i++) {
+    const dynamiteImage = document.createElement("img");
+    dynamiteImage.src = "/img/dynamite.png";
+    dynamiteImage.id = "dynamiteImage" + i;
+    dynamiteImage.classList.add("itemimage");
+    dynamitesImagesContainer.appendChild(dynamiteImage);
+  }
+}
+
+function UpdateMinersImages() {
+  // Получаем Контейнер Для Dynamite Images
+  const minersImagesContainer = document.getElementById(
+    "minersImagesContainer"
+  );
+
+  // Обнуляем прошлые Картинки
+  minersImagesContainer.innerHTML = "";
+
+  // Максимальное количество курсоров для отображения
+  const maxMinersToShow = 30;
+
+  // Инициализируем новые элементы добавляя к ним Image
+  for (let i = 0; i < state.miners && i < maxMinersToShow; i++) {
+    const minerImage = document.createElement("img");
+    minerImage.src = "/img/miner.png";
+    minerImage.id = "minerImage" + i;
+    minerImage.classList.add("itemimage");
+    minersImagesContainer.appendChild(minerImage);
+  }
+}
+function UpdateBulldozersImages() {
+  // Получаем Контейнер Для Bulldozer Images
+  const bulldozersImagesContainer = document.getElementById(
+    "bulldozersImagesContainer"
+  );
+
+  // Обнуляем прошлые Картинки
+  bulldozersImagesContainer.innerHTML = "";
+
+  // Максимальное количество курсоров для отображения
+  const maxBulldozersToShow = 30;
+
+  // Инициализируем новые элементы добавляя к ним Image
+  for (let i = 0; i < state.bulldozers && i < maxBulldozersToShow; i++) {
+    const bulldozerImage = document.createElement("img");
+    bulldozerImage.src = "/img/bulldozer.png";
+    bulldozerImage.id = "bulldozerImage" + i;
+    bulldozerImage.classList.add("itemimage");
+    bulldozersImagesContainer.appendChild(bulldozerImage);
+  }
+}
 // Update UI of Pickaxes Count
 function updatePickaxes() {
   document.getElementById("pickaxesValue").innerText = state.pickaxes;
+  UpdatePickaxesImages();
 }
 
 // Update UI of Dynamites Count
 function updateDynamites() {
   document.getElementById("dynamitesValue").innerText = state.dynamites;
+  UpdateDynamitesImages();
 }
 
-// Update UI of Dynamites Count
+// Update UI of Miners Count
 function updateMiners() {
   document.getElementById("minersValue").innerText = state.miners;
+  UpdateMinersImages();
 }
 
-// Update UI of Dynamites Count
+// Update UI of Bulldozers Count
 function updateBulldozers() {
   document.getElementById("bulldozersValue").innerText = state.bulldozers;
+  UpdateBulldozersImages();
 }
 
 // Update UI for Shop
@@ -210,14 +307,14 @@ function updateShop() {
       updateScore();
     }, 1000);
   }
-  // Set Interval for Dynamites Income
+  // Set Interval for Miners Income
   if (state.miners > 0) {
     dynamiteInterval = setInterval(function () {
       state.score += state.items["Miner"].income * state.miners;
       updateScore();
     }, 1000);
   }
-  // Set Interval for Dynamites Income
+  // Set Interval for Bulldozers Income
   if (state.bulldozers > 0) {
     dynamiteInterval = setInterval(function () {
       state.score += state.items["Bulldozer"].income * state.bulldozers;

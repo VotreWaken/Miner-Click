@@ -130,7 +130,6 @@ function loadLocal() {
 
     // Оффлайн Сбор Ресурсов
     collectOfflineResources();
-
     // Сохранение Последней Даты Входа
     saveLastLoginDate();
 
@@ -249,7 +248,7 @@ function ResetLocalStorage() {
   ResetAchievements();
   ResetStatePrices();
 }
-export {ResetLocalStorage};
+export { ResetLocalStorage };
 
 // Reset Всех Достижений
 function ResetAchievements() {
@@ -292,7 +291,8 @@ function ResetStatePrices() {
   document.getElementById("pickaxeCost").innerText = state.items.Pickaxe.cost;
   document.getElementById("dynamiteCost").innerText = state.items.Dynamite.cost;
   document.getElementById("minerCost").innerText = state.items.Miner.cost;
-  document.getElementById("bulldozerCost").innerText = state.items.Bulldozer.cost;
+  document.getElementById("bulldozerCost").innerText =
+    state.items.Bulldozer.cost;
 }
 
 //#endregion

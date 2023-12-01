@@ -272,9 +272,20 @@ body {
 }
 
 /* //////////////////////////////////////////// */
-.cursorImage {
+.itemimage {
   width: 35px;
   height: auto;
+  margin: 0 2px;
+}
+.itemTitle {
+  width: 100%;
+  padding: 2px;
+  font-size: 1em;
+  font-weight: bold;
+  text-shadow: 4px 2px 8px #fa9e00;
+}
+.itemTitle span {
+  color: lime;
 }
 .main {
   display: flex;
