@@ -500,4 +500,6 @@ a {
   background: rgb(189, 31, 31);
   box-shadow: 0 0 16px rgba(134, 38, 14, 0.9);
   transition: 0.2s;
+  cursor: pointer;
 }
+/* ///////////////////////////////////////////////// */

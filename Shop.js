@@ -130,6 +130,7 @@ function UpdateCursorsImages() {
   // Максимальное количество курсоров для отображения
   const maxCursorsToShow = 30;
 
+  
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.cursors && i < maxCursorsToShow; i++) {
     const cursorImage = document.createElement("img");

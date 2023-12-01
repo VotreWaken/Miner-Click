@@ -249,6 +249,7 @@ function ResetLocalStorage() {
   ResetAchievements();
   ResetStatePrices();
 }
+export {ResetLocalStorage};
 
 // Reset Всех Достижений
 function ResetAchievements() {
@@ -350,6 +351,7 @@ function gameRecover(map) {
     switch (key) {
       case "emeraldsCounter":
         emeraldsCounter.textContent = value;
+        console.log("emeraldsCounter  " + emeraldsCounter.textContent);
         state.score = parseInt(value);
         break;
       case "cursorsValue":
