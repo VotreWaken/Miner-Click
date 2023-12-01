@@ -365,6 +365,11 @@ a {
   border-radius: 10px;
   text-decoration: none;
 }
+
+a:hover {
+  background: rgb(255, 208, 0);
+  box-shadow: 0px 0px 14px rgba(255, 162, 0, 1);
+}
 #saveFile {
   background: transparent;
   border: none !important;
@@ -386,6 +391,10 @@ a {
   border-radius: 10px;
   padding: 10px 15px;
 }
+#volume:hover{
+  background: rgb(255, 208, 0);
+  box-shadow: 0px 0px 14px rgba(255, 162, 0, 1);
+}
 #load {
   display: flex;
   align-items: center;
@@ -397,6 +406,10 @@ a {
   font-size: 0.9em;
   font-weight: 700;
   color: rgb(247, 78, 11);
+}
+#load:hover{
+  background: rgb(255, 208, 0);
+  box-shadow: 0px 0px 14px rgba(255, 162, 0, 1);
 }
 #imgButton.pulse {
   transform: scale(1.2);

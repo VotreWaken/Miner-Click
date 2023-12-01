@@ -120,13 +120,15 @@ function updateScore() {
 // Update UI of Cursors Count
 function updateCursors() {
   document.getElementById("cursorsValue").innerText = state.cursors;
-
   // Call the function to update cursor images
   UpdateCursorsImages();
 }
 
 // Create Images With Represent Value
 function UpdateCursorsImages() {
+  if (state.cursors > 0) {
+    document.getElementById("row1").style.display = "block";
+  }
   // Получаем Контейнер Для Cursor Images
   const cursorsImagesContainer = document.getElementById(
     "cursorsImagesContainer"
@@ -149,6 +151,9 @@ function UpdateCursorsImages() {
 }
 
 function UpdatePickaxesImages() {
+  if (state.pickaxes > 0) {
+    document.getElementById("row2").style.display = "block";
+  }
   // Получаем Контейнер Для Pickaxe Images
   const pickaxeImagesContainer = document.getElementById(
     "pickaxesImagesContainer"
@@ -171,6 +176,9 @@ function UpdatePickaxesImages() {
 }
 
 function UpdateDynamitesImages() {
+  if (state.dynamites > 0) {
+    document.getElementById("row3").style.display = "block";
+  }
   // Получаем Контейнер Для Dynamite Images
   const dynamitesImagesContainer = document.getElementById(
     "dynamitesImagesContainer"
@@ -193,6 +201,9 @@ function UpdateDynamitesImages() {
 }
 
 function UpdateMinersImages() {
+  if (state.miners > 0) {
+    document.getElementById("row4").style.display = "block";
+  }
   // Получаем Контейнер Для Dynamite Images
   const minersImagesContainer = document.getElementById(
     "minersImagesContainer"
@@ -214,6 +225,9 @@ function UpdateMinersImages() {
   }
 }
 function UpdateBulldozersImages() {
+  if (state.bulldozers > 0) {
+    document.getElementById("row5").style.display = "block";
+  }
   // Получаем Контейнер Для Bulldozer Images
   const bulldozersImagesContainer = document.getElementById(
     "bulldozersImagesContainer"
