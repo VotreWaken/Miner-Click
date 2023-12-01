@@ -68,12 +68,14 @@ document.addEventListener("click", function () {
   // backgroundMusic.pause();
 
   // Изменение громкости (значение от 0.0 до 1.0)
-  //backgroundMusic.volume = 0.3;
-  //backgroundMusic1.volume = 0.3;
+  backgroundMusic.volume = volumeControl.value;
+  backgroundMusic1.volume = volumeControl.value;
 });
 
 let volumeControl = document.getElementById("rangeinput");
 volumeControl.addEventListener("input", function () {
+
+  
   backgroundMusic.volume = volumeControl.value;
   backgroundMusic1.volume = volumeControl.value;
 });
