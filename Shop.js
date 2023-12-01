@@ -317,14 +317,14 @@ function updateShop() {
   }
   // Set Interval for Miners Income
   if (state.miners > 0) {
-    dynamiteInterval = setInterval(function () {
+    minerInterval = setInterval(function () {
       state.score += state.items["Miner"].income * state.miners;
       updateScore();
     }, 1000);
   }
   // Set Interval for Bulldozers Income
   if (state.bulldozers > 0) {
-    dynamiteInterval = setInterval(function () {
+    bulldozerInterval = setInterval(function () {
       state.score += state.items["Bulldozer"].income * state.bulldozers;
       updateScore();
     }, 1000);
