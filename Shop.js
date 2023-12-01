@@ -112,18 +112,6 @@ export function buyItem(item) {
   }
 }
 
-// Update Score
-function updateScore() {
-  document.getElementById("emeraldsCounter").textContent = state.score;
-}
-
-// Update UI of Cursors Count
-function updateCursors() {
-  document.getElementById("cursorsValue").innerText = state.cursors;
-  // Call the function to update cursor images
-  UpdateCursorsImages();
-}
-
 // Create Images With Represent Value
 function UpdateCursorsImages() {
   if (state.cursors > 0) {
@@ -248,6 +236,19 @@ function UpdateBulldozersImages() {
     bulldozersImagesContainer.appendChild(bulldozerImage);
   }
 }
+
+// Update Score
+function updateScore() {
+  document.getElementById("emeraldsCounter").textContent = state.score;
+}
+
+// Update UI of Cursors Count
+function updateCursors() {
+  document.getElementById("cursorsValue").innerText = state.cursors;
+  // Call the function to update cursor images
+  UpdateCursorsImages();
+}
+
 // Update UI of Pickaxes Count
 function updatePickaxes() {
   document.getElementById("pickaxesValue").innerText = state.pickaxes;
@@ -288,15 +289,8 @@ function updateShop() {
     state.items["Dynamite"].income * state.dynamites +
     state.items["Miner"].income * state.miners +
     state.items["Bulldozer"].income * state.bulldozers;
-
   // Update UI for total income per second
   document.getElementById("EmeraldsInSecond").textContent = totalIncome;
-
-  console.log(state.cursors);
-  console.log(state.pickaxes);
-  console.log(state.dynamites);
-  console.log(state.miners);
-  console.log(state.bulldozers);
   // Cursor Income Handler
   if (state.cursors > 0) {
     // Set Interval for Cursor Income

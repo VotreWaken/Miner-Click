@@ -20,7 +20,6 @@ function callback(mutations) {
   mutations.forEach(function (mutation) {
     switch (mutation.target.id) {
       case "emeraldsCounter":
-        console.log("emeraldsCounter - change");
         localStorage.setItem(
           "emeraldsCounter",
           mutation.addedNodes[0].textContent
@@ -30,6 +29,7 @@ function callback(mutations) {
         localStorage.setItem(
           "cursorsValue",
           mutation.addedNodes[0].textContent
+          
         );
         localStorage.setItem("cursorCost", state.items.Cursor.cost);
         break;
