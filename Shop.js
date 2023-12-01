@@ -8,6 +8,8 @@ import { collectOfflineResources } from "./saving.js";
 let cursorInterval;
 let pickaxeInterval;
 let dynamiteInterval;
+let minerInterval;
+let bulldozerInterval;
 
 // Add Buy Events To HTML Elements
 document.getElementById("cursorItem").addEventListener("click", function () {
@@ -24,7 +26,7 @@ document.getElementById("dynamiteItem").addEventListener("click", function () {
 document.getElementById("minerItem").addEventListener("click", function () {
   buyItem("Miner");
 });
-document.getElementById("dynamiteItem").addEventListener("click", function () {
+document.getElementById("bulldoserItem").addEventListener("click", function () {
   buyItem("Bulldozer");
 });
 
@@ -131,7 +133,7 @@ function UpdateCursorsImages() {
   // Инициализируем новые элементы добавляя к ним Image
   for (let i = 0; i < state.cursors && i < maxCursorsToShow; i++) {
     const cursorImage = document.createElement("img");
-    cursorImage.src = "/img/volume.png";
+    cursorImage.src = "/img/cursor.png";
     cursorImage.id = "cursorImage" + i;
     cursorImage.classList.add("cursorImage");
     cursorsImagesContainer.appendChild(cursorImage);
@@ -149,13 +151,13 @@ function updateDynamites() {
 }
 
 // Update UI of Dynamites Count
-function updateDynamites() {
-  document.getElementById("minersValue").innerText = state.dynamites;
+function updateMiners() {
+  document.getElementById("minersValue").innerText = state.miners;
 }
 
 // Update UI of Dynamites Count
-function updateDynamites() {
-  document.getElementById("dynamitesValue").innerText = state.dynamites;
+function updateBulldozers() {
+  document.getElementById("bulldozersValue").innerText = state.bulldozers;
 }
 
 // Update UI for Shop
@@ -164,12 +166,16 @@ function updateShop() {
   clearInterval(cursorInterval);
   clearInterval(pickaxeInterval);
   clearInterval(dynamiteInterval);
+  clearInterval(minerInterval);
+  clearInterval(bulldozerInterval);
 
   // Calculate total income per second
   let totalIncome =
     state.items["Cursor"].income * state.cursors +
     state.items["Pickaxe"].income * state.pickaxes +
-    state.items["Dynamite"].income * state.dynamites;
+    state.items["Dynamite"].income * state.dynamites +
+    state.items["Miner"].income * state.miners +
+    state.items["Bulldozer"].income * state.bulldozers;
 
   // Update UI for total income per second
   document.getElementById("EmeraldsInSecond").textContent = totalIncome;
@@ -177,6 +183,8 @@ function updateShop() {
   console.log(state.cursors);
   console.log(state.pickaxes);
   console.log(state.dynamites);
+  console.log(state.miners);
+  console.log(state.bulldozers);
   // Cursor Income Handler
   if (state.cursors > 0) {
     // Set Interval for Cursor Income
@@ -201,6 +209,20 @@ function updateShop() {
       updateScore();
     }, 1000);
   }
+  // Set Interval for Dynamites Income
+  if (state.miners > 0) {
+    dynamiteInterval = setInterval(function () {
+      state.score += state.items["Miner"].income * state.miners;
+      updateScore();
+    }, 1000);
+  }
+  // Set Interval for Dynamites Income
+  if (state.bulldozers > 0) {
+    dynamiteInterval = setInterval(function () {
+      state.score += state.items["Bulldozer"].income * state.bulldozers;
+      updateScore();
+    }, 1000);
+  }
 }
 
 // Update UI for Item Cost
@@ -215,4 +237,6 @@ function loadLocalPrice() {
   updateCost("Cursor", state.items.Cursor.cost);
   updateCost("Pickaxe", state.items.Pickaxe.cost);
   updateCost("Dynamite", state.items.Dynamite.cost);
+  updateCost("Miner", state.items.Miner.cost);
+  updateCost("Bulldozer", state.items.Bulldozer.cost);
 }
