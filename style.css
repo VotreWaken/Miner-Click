@@ -40,6 +40,7 @@ body {
   /* min-width: 300px; */
   position: relative;
   background: url("img/BackL2.jpg") center;
+  z-index: 0;
 }
 #canvas {
   position: absolute;
@@ -56,6 +57,8 @@ body {
   flex-direction: column;
   text-align: center;
   align-items: center;
+  position: absolute;
+  z-index: 9;
 }
 #factoryName,
 #oreCount {
@@ -82,12 +85,14 @@ body {
   background-repeat: no-repeat;
   border-radius: 128px;
   border: none;
+  z-index: 10;
 }
 #imgButton {
   width: 350px;
   height: auto;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  z-index: 10;
 }
 
 /* ============= sectionMiddle ========= */
@@ -431,4 +436,18 @@ a {
   75% {
     transform: translate(0, 160%);
   }
+}
+.falling {
+   position: absolute; 
+  animation: fall 15s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(95vh);
+  }
+}
+img {
+  
+  pointer-events: none; 
 }

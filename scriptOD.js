@@ -62,8 +62,8 @@ document.addEventListener("click", function () {
   let backgroundMusic1 = document.getElementById("backgroundMusic1");
   // Воспроизведение музыки
 
-  // backgroundMusic.play();
-  // backgroundMusic1.play();
+   backgroundMusic.play();
+   backgroundMusic1.play();
   // Пауза музыки
   // backgroundMusic.pause();
 
@@ -88,3 +88,42 @@ pulseImage.addEventListener("click", function () {
     pulseImage.classList.remove("pulse");
   }, 200);
 });
+//#region  дождь из брилиантов
+function createDiamond() {
+  let l_div = document.getElementById('infoLeft')
+  const diamond = document.createElement('img');
+  diamond.src = 'img/emerald.png';
+  diamond.style.width = '30px'; 
+  diamond.style.height = '30px';
+  diamond.style.left = `${Math.random() * (l_div.offsetWidth-20)}px`;
+  diamond.style.top = '0';
+  diamond.style.zIndex = '1'
+  diamond.classList.add('falling');
+  l_div.appendChild(diamond);
+}
+function getRandomInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+let minInterval = 1000; 
+let maxInterval = 20000; 
+
+
+
+
+function createDiamondRain(numDiamonds) {
+  for (let i = 0; i < numDiamonds; i++) {
+    setInterval(function() {
+      
+    
+      var randomInterval = getRandomInterval(minInterval, maxInterval);
+      createDiamond();
+    
+    }, getRandomInterval(minInterval, maxInterval));
+    //createDiamond();
+  }
+}
+
+createDiamondRain(10);
+//#endregion
