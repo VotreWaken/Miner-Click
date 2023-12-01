@@ -103,6 +103,17 @@ function createDiamond() {
   diamond.classList.add('falling');
   l_div.appendChild(diamond);
 }
+
+setTimeout(function () {
+  //трансформаци кристалика
+
+  img.classList.remove("transformed");
+
+  // Удаление изображения после завершения трансформации
+  setTimeout(function () {
+    l_div.removeChild(img);
+  }, 500);
+}, 0);
 function getRandomInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
